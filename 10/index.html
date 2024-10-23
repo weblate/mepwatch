@@ -433,7 +433,7 @@
               docs[d.key] &&
               "<a title='view on oeil' class='badge badge-secondary' href='" +
                 docs[d.key].oeil +
-                "'>👁</a>"
+                "' target='oeil'>👁</a>"
             );
           },
 
@@ -462,6 +462,7 @@
           })
           .order(d3.descending)
           .on("renderlet.filter", function (g) {
+            g.selectAll('tr.dc-table-row a').on('click', (e) => { console.log("oeil");return e.stopPropagation()});
             g.selectAll("tr.dc-table-row").on("click", function (d) {
               var id = d3.select(this).datum().key;
               console.log(id);
@@ -582,6 +583,7 @@
         };
 
         var q = urlParam("q");
+        const doc = urlParam("doc");
 
         var chart = dc
           .textFilterWidget(dom)
@@ -671,7 +673,7 @@
               return docs[d.report]
                 ? "<a href='" +
                     docs[d.report].oeil +
-                    "'>" +
+                    "' target='oeil'>" +
                     docs[d.report].title +
                     "</a>&nbsp;" +
                     d.title
@@ -688,6 +690,7 @@
             },
           ])
           .on("renderlet.govote", function (g) {
+            g.selectAll('tr.dc-table-row a').on('click', e => e.stopPropagation());
             g.selectAll("tr.dc-table-row").on("click", function (d) {
               window.open("vote.html?v=" + d3.select(this).datum().identifier);
             });

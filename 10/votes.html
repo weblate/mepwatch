@@ -453,6 +453,7 @@ td a {color:rgb(33, 150, 243);}
         ,function(d){ return d.abstention;}
     ])
     .on("renderlet.govote", function(g) {
+      g.selectAll('tr.dc-table-row a').on('click', e => e.stopPropagation());
       g.selectAll("tr.dc-table-row")
         .on("click", function(d) {
           window.open("vote.html?v="+d3.select(this).datum().identifier);
