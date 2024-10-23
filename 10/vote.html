@@ -1119,8 +1119,8 @@ font-family: "Twemoji Country Flags"!important;
           .group(group, "", 0)
           .on("renderlet", function (c) {
             //!isMobile &&
+            if (!d3.select("#country .axis.x .tick text.country-flag").empty()) return;;
             rotateBarChartLabels();
-            if (!d3.select("#country .axis.x .tick text").empty()) return;;
             d3.select("#country .axis.x")
               .selectAll(".tick")
 .append("text")
