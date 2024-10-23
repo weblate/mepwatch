@@ -154,8 +154,8 @@ font-family: "Twemoji Country Flags"!important;
       }
 
 
-      .gue-ngl {
-        background-image: url("img/eugroups/lefgue.png");
+      .the-left, .gue-ngl {
+        background-image: url("img/eugroups/leftgue.png");
       }
 
 
@@ -455,7 +455,8 @@ font-family: "Twemoji Country Flags"!important;
         graphs.party = drawBarVotes("#party div.graph", function (d) {
           return [d.country, d.party];
         });
-        //    graphs.party.xAxis().tickFormat(function(d) { return d[1]; });
+
+        //graphs.party.xAxis().tickFormat(function(d) { return d[1]; });
 
         graphs.party.elasticX(true).title(function (d) {
           if (this.layer == 0) return "";
@@ -835,14 +836,12 @@ font-family: "Twemoji Country Flags"!important;
         graph
           .width(width)
           .height(width)
-          //        .width(220)
-          //        .height(220)
           .outerPadding(0)
           .gap(1)
           .margins({
             top: 5,
             right: 10,
-            bottom: 60,
+            bottom: 66,
             left: 5,
           })
           .ordering(function (d) {
@@ -1121,7 +1120,7 @@ font-family: "Twemoji Country Flags"!important;
           .on("renderlet", function (c) {
             //!isMobile &&
             rotateBarChartLabels();
-            if (!d3.select("#country .axis.x use").empty()) return;
+            if (!d3.select("#country .axis.x .tick text").empty()) return;;
             d3.select("#country .axis.x")
               .selectAll(".tick")
 .append("text")
@@ -1448,7 +1447,7 @@ font-family: "Twemoji Country Flags"!important;
                 "<span title='" +
                 d.eugroup +
                 "' class='img-rounded text-filter eugroup " +
-                d.eugroup.replace(/&|\/|car/g, "-").toLowerCase() +
+                d.eugroup.replace(/&|\/| |car/g, "-").toLowerCase() +
                 "'>" +
                 d.eugroup +
                 "</span>"
