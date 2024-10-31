@@ -1,13 +1,19 @@
 "use strict";
-var ndx = null;
-var graphs = {};
-var q = d3.queue();
-var meps = [];
-var votes = [];
-var config = {};
+let ndx = null;
+const graphs = {};
+const q = d3.queue();
+let meps = [];
+let votes = [];
+let config = {};
 
-var voteid = urlParam("v");
-var results = "for,against,abstention,no show,excused,attended".split(",");
+let voteid = urlParam("v");
+//const results = "for,against,abstention,no show,excused,attended".split(",");
+const results = "for,against,abstention,attended,no show,excused".split(",");
+const        resultscolor = d3
+          .scaleOrdinal()
+          .domain(results)
+//          .range("#27ae60,#c0392b,#2980b9,#95a5a6,#34495e,#6699CC".split(","));
+          .range("#27ae60,#c0392b,#2980b9,#6699CC,#95a5a6,#34495e".split(","));
 
 const flag = (isoCode) => {
   const offset = 127397;
@@ -52,10 +58,12 @@ console.log(data);
 
 
 const groupAlias = {
+  "Verts/ALE": "Greens/EFA",
   PPE: "EPP",
   NI: "NA",
   //  "The Left": "GUE/NGL",
   "GUE/NGL": "The Left",
+  "Pfe": "Patriots",
 };
 var countries = {
   be: "Belgium",
@@ -92,7 +100,7 @@ var iconify = function (name, prefix) {
   if (prefix === "flag") return flag(name);
   prefix = prefix || "icon";
   return (
-    '<svg class="icon" class="' +
+    '<svg class="icon icon-' +
     name +
     '"><title>' +
     name +
@@ -104,10 +112,7 @@ var iconify = function (name, prefix) {
   );
 };
 
-var resultscolor = d3
-  .scaleOrdinal()
-  .domain(results)
-  .range("#27ae60,#c0392b,#2980b9,#95a5a6,#34495e,#bdc3c7".split(","));
+
 var percentagecolor = d3
   .scaleLinear()
   .domain([0, 49, 50, 51, 100])
