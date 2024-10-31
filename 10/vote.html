@@ -20,162 +20,162 @@
     <link rel="prefetch" href="./data/meps.csv" as="fetch" />
 
     <style>
-            body {font-family: "Twemoji Country Flags", Roboto,-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-            span.form-control {
-              border-bottom: 0px;
-            }
+                  body {font-family: "Twemoji Country Flags", Roboto,-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+                  span.form-control {
+                    border-bottom: 0px;
+                  }
 
-            #map svg {
-              background: #bbdeea;
-              border-radius: 10px;
-            }
+                  #map svg {
+                    background: #bbdeea;
+                    border-radius: 10px;
+                  }
 
-            .rotated90 svg {
-              background-color: rgba(255, 255, 255, 0.7);
-            }
-            .rotated90 .axis path {
-              display: none;
-            }
-            .rotated90 .y {
-              display: none;
-            }
+                  .rotated90 svg {
+                    background-color: rgba(255, 255, 255, 0.7);
+                  }
+                  .rotated90 .axis path {
+                    display: none;
+                  }
+                  .rotated90 .y {
+                    display: none;
+                  }
 
-            #party rect.bar {
-              fill-opacity: 0.3;
-            }
+                  #party rect.bar {
+                    fill-opacity: 0.3;
+                  }
 
-            .stack .barLabel {
-              display: none;
-            }
-            .rotated90 svg > g {
-              transform: rotate(90deg);
-              transform-origin: 50% 50%;
-            }
+                  .stack .barLabel {
+                    display: none;
+                  }
+                  .rotated90 svg > g {
+                    transform: rotate(90deg);
+                    transform-origin: 50% 50%;
+                  }
 
-            html .bg-info {
-              background-image: linear-gradient(-20deg, #6e45e2 0%, #88d3ce 100%);
-            }
+                  html .bg-info {
+                    background-image: linear-gradient(-20deg, #6e45e2 0%, #88d3ce 100%);
+                  }
 
-            .wide-tip {
-              min-width: 270px;
-            }
+                  .wide-tip {
+                    min-width: 270px;
+                  }
 
-            .wide-tip .icon {
-              width: 1.2em;
-              height: 1em;
-            }
+                  .wide-tip .icon {
+                    width: 1.2em;
+                    height: 1em;
+                  }
 
-            .resetall button {
-              padding: 5px 0;
-              min-width: 3rem;
-              font-size: 0.9em;
-            }
-            .glyphicon-sort:after {
-              content: "⇅";
-            }
-            .glyphicon-arrow-up:after {
-              content: "⤒";
-            }
-            .glyphicon-arrow-down:after {
-              content: "⤓";
-            }
+                  .resetall button {
+                    padding: 5px 0;
+                    min-width: 3rem;
+                    font-size: 0.9em;
+                  }
+                  .glyphicon-sort:after {
+                    content: "⇅";
+                  }
+                  .glyphicon-arrow-up:after {
+                    content: "⤒";
+                  }
+                  .glyphicon-arrow-down:after {
+                    content: "⤓";
+                  }
 
-            .flag-icon,
-            .country-flag {
-      font-family: "Twemoji Country Flags"!important;
-              font-size: 1.4em!important;
-            }
-
-
-
-            img.face {
-              width: 40px;
-              height: 50px;
-              border-radius: 25px;
-              position: relative;
-              margin-left: -10px;
-              margin-right: 10px;
-            }
-
-            th .glyphicon {
-              margin-left: 5px;
-              color: black;
-              font-size: 1.3em;
-              border: 1px solid grey;
-              text-align: center;
-              width: 1.3em;
-              border-radius: 2px;
-              display: inline-block;
-            }
-
-            th#country,
-            th#eugroup,
-            th#col_0,
-            th#col_1,
-            th#twitter {
-              min-width: 100px;
-              padding-right: 0.75rem;
-              padding-left: 0.75rem;
-            }
-
-            .icon,
-            .eugroup {
-              display: inline-block;
-              width: 25px;
-              height: 25px;
-              text-indent: 100%;
-              white-space: nowrap;
-              overflow: hidden;
-              background-size: cover;
-              background-position: center;
-            }
-
-svg.icon-against use { color: #c0392b;}
-svg.icon-abstention use { color: #2980b9;}
-svg.icon-for use { color: #27ae60;}
-svg.icon-attended use { color: #6699CC}
-.pie-slice use {color: #fff}
-
-            .patriots {
-              background-image: url("img/eugroups/patriots.png");
-            }
-            .esn {
-              background-image: url("img/eugroups/esn.png");
-            }
-
-            .ppe,
-            .epp {
-              background-image: url("img/eugroups/epp.png");
-            }
-
-            .s-d {
-              background-image: url("img/eugroups/sd.png");
-            }
-
-            .renew {
-              background-image: url("img/eugroups/renew.png");
-            }
-
-            .verts-ale,
-            .greens-efa {
-              background-image: url("img/eugroups/greensefa.png");
-            }
+                  .flag-icon,
+                  .country-flag {
+            font-family: "Twemoji Country Flags"!important;
+                    font-size: 1.4em!important;
+                  }
 
 
-            .the-left, .gue-ngl {
-              background-image: url("img/eugroups/leftgue.png");
-            }
+
+                  img.face {
+                    width: 40px;
+                    height: 50px;
+                    border-radius: 25px;
+                    position: relative;
+                    margin-left: -10px;
+                    margin-right: 10px;
+                  }
+
+                  th .glyphicon {
+                    margin-left: 5px;
+                    color: black;
+                    font-size: 1.3em;
+                    border: 1px solid grey;
+                    text-align: center;
+                    width: 1.3em;
+                    border-radius: 2px;
+                    display: inline-block;
+                  }
+
+                  th#country,
+                  th#eugroup,
+                  th#col_0,
+                  th#col_1,
+                  th#twitter {
+                    min-width: 100px;
+                    padding-right: 0.75rem;
+                    padding-left: 0.75rem;
+                  }
+
+                  .icon,
+                  .eugroup {
+                    display: inline-block;
+                    width: 25px;
+                    height: 25px;
+                    text-indent: 100%;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    background-size: cover;
+                    background-position: center;
+                  }
+
+      svg.icon-against use { color: #c0392b;}
+      svg.icon-abstention use { color: #2980b9;}
+      svg.icon-for use { color: #27ae60;}
+      svg.icon-attended use { color: #6699CC}
+      .pie-slice use {color: #fff}
+
+                  .patriots {
+                    background-image: url("img/eugroups/patriots.png");
+                  }
+                  .esn {
+                    background-image: url("img/eugroups/esn.png");
+                  }
+
+                  .ppe,
+                  .epp {
+                    background-image: url("img/eugroups/epp.png");
+                  }
+
+                  .s-d {
+                    background-image: url("img/eugroups/sd.png");
+                  }
+
+                  .renew {
+                    background-image: url("img/eugroups/renew.png");
+                  }
+
+                  .verts-ale,
+                  .greens-efa {
+                    background-image: url("img/eugroups/greensefa.png");
+                  }
 
 
-            .ecr {
-              background-image: url("img/eugroups/ecr.png");
-            }
+                  .the-left, .gue-ngl {
+                    background-image: url("img/eugroups/leftgue.png");
+                  }
 
-            .na,
-            .ni,
-            .na-ni {
-              background-image: url("img/eugroups/ni.png");
-            }
+
+                  .ecr {
+                    background-image: url("img/eugroups/ecr.png");
+                  }
+
+                  .na,
+                  .ni,
+                  .na-ni {
+                    background-image: url("img/eugroups/ni.png");
+                  }
     </style>
   </head>
   <body>
@@ -802,34 +802,33 @@ svg.icon-attended use { color: #6699CC}
           .dimension(dim)
           .group(group)
           .externalLabels(-26)
-//          .minAngleForLabel(0.2);
-.renderLabel(false)
+          //          .minAngleForLabel(0.2);
+          .renderLabel(false);
 
         //        .legend(dc.legend().horizontal(true).autoItemWidth(true).y(200));
         graph.on("pretransition", function (chart) {
- const arc = d3.arc()
+          const arc = d3
+            .arc()
             .innerRadius(chart.innerRadius())
-            .outerRadius(chart.width()/2);
+            .outerRadius(chart.width() / 2);
 
-          chart
-            .selectAll(".pie-slice").each ( function (d,i) {
-const minAngle = d.endAngle - d.startAngle;
+          chart.selectAll(".pie-slice").each(function (d, i) {
+            const minAngle = d.endAngle - d.startAngle;
 
-const [x, y] = arc.centroid(d);
-d3.select(this).select('use').remove();
+            const [x, y] = arc.centroid(d);
+            d3.select(this).select("use").remove();
 
-if (minAngle <0.2) return;
- 
-d3.select(this)
-  .append('use')
-                .attr('width', 20)
-                .attr('height', 20)
-                .attr('x', x-10) // Adjust to centre the icon
-                .attr('y', y-10)
-                  .attr('href', `#icon-${d.data.key}`)
+            if (minAngle < 0.2) return;
 
-            });
-/*            .call(tip)
+            d3.select(this)
+              .append("use")
+              .attr("width", 20)
+              .attr("height", 20)
+              .attr("x", x - 10) // Adjust to centre the icon
+              .attr("y", y - 10)
+              .attr("href", `#icon-${d.data.key}`);
+          });
+          /*            .call(tip)
             .on("mouseover.tip", tip.show)
             .on("mouseout.tip", tip.hide);
 */
@@ -1634,9 +1633,9 @@ d3.select(this)
 
     <svg>
       <defs>
-    <filter id="blur-filter" x="0" y="0">
-      <feGaussianBlur stdDeviation="1" /> 
-    </filter>
+        <filter id="blur-filter" x="0" y="0">
+          <feGaussianBlur stdDeviation="1" />
+        </filter>
         <filter id="glow">
           <feGaussianBlur stdDeviation="3.5" result="coloredBlur">
             <feMerge in="SourceGraphic">
@@ -1677,13 +1676,14 @@ d3.select(this)
           d="M23,10C23,8.89 22.1,8 21,8H14.68L15.64,3.43C15.66,3.33 15.67,3.22 15.67,3.11C15.67,2.7 15.5,2.32 15.23,2.05L14.17,1L7.59,7.58C7.22,7.95 7,8.45 7,9V19A2,2 0 0,0 9,21H18C18.83,21 19.54,20.5 19.84,19.78L22.86,12.73C22.95,12.5 23,12.26 23,12V10M1,21H5V9H1V21Z"
         />
       </symbol>
-<symbol id="icon-attended" viewBox="0 0 24 24">
-  <path 
-fill="currentColor" 
-  filter="url(#blur-filter)"
+      <symbol id="icon-attended" viewBox="0 0 24 24">
+        <path
+          fill="currentColor"
+          filter="url(#blur-filter)"
           transform="rotate(66 12 12)"
-d="m10.89 18.28.57-2.89c.12-.59-.04-1.2-.42-1.66S10.1 13 9.5 13H4v-1.08L6.57 6h8.09c.18 0 .34.16.34.34v7.84zM10 22l6.41-6.41c.38-.38.59-.89.59-1.42V6.34C17 5.05 15.95 4 14.66 4h-8.1c-.71 0-1.36.37-1.72.97l-2.67 6.15c-.11.25-.17.52-.17.8V13c0 1.1.9 2 2 2h5.5l-.92 4.65c-.05.22-.02.46.08.66.23.45.52.86.88 1.22zm10-7h2V4h-2c-.55 0-1 .45-1 1v9c0 .55.45 1 1 1"></path>
-</symbol>
+          d="m10.89 18.28.57-2.89c.12-.59-.04-1.2-.42-1.66S10.1 13 9.5 13H4v-1.08L6.57 6h8.09c.18 0 .34.16.34.34v7.84zM10 22l6.41-6.41c.38-.38.59-.89.59-1.42V6.34C17 5.05 15.95 4 14.66 4h-8.1c-.71 0-1.36.37-1.72.97l-2.67 6.15c-.11.25-.17.52-.17.8V13c0 1.1.9 2 2 2h5.5l-.92 4.65c-.05.22-.02.46.08.66.23.45.52.86.88 1.22zm10-7h2V4h-2c-.55 0-1 .45-1 1v9c0 .55.45 1 1 1"
+        ></path>
+      </symbol>
 
       <symbol id="icon-rebel" viewBox="0 0 24 24">
         <path
