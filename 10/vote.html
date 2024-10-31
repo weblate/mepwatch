@@ -20,154 +20,162 @@
     <link rel="prefetch" href="./data/meps.csv" as="fetch" />
 
     <style>
-      body {font-family: "Twemoji Country Flags", Roboto,-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-      span.form-control {
-        border-bottom: 0px;
-      }
+                  body {font-family: "Twemoji Country Flags", Roboto,-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+                  span.form-control {
+                    border-bottom: 0px;
+                  }
 
-      #map svg {
-        background: #bbdeea;
-        border-radius: 10px;
-      }
+                  #map svg {
+                    background: #bbdeea;
+                    border-radius: 10px;
+                  }
 
-      .rotated90 svg {
-        background-color: rgba(255, 255, 255, 0.7);
-      }
-      .rotated90 .axis path {
-        display: none;
-      }
-      .rotated90 .y {
-        display: none;
-      }
+                  .rotated90 svg {
+                    background-color: rgba(255, 255, 255, 0.7);
+                  }
+                  .rotated90 .axis path {
+                    display: none;
+                  }
+                  .rotated90 .y {
+                    display: none;
+                  }
 
-      #party rect.bar {
-        fill-opacity: 0.3;
-      }
+                  #party rect.bar {
+                    fill-opacity: 0.3;
+                  }
 
-      .stack .barLabel {
-        display: none;
-      }
-      .rotated90 svg > g {
-        transform: rotate(90deg);
-        transform-origin: 50% 50%;
-      }
+                  .stack .barLabel {
+                    display: none;
+                  }
+                  .rotated90 svg > g {
+                    transform: rotate(90deg);
+                    transform-origin: 50% 50%;
+                  }
 
-      html .bg-info {
-        background-image: linear-gradient(-20deg, #6e45e2 0%, #88d3ce 100%);
-      }
+                  html .bg-info {
+                    background-image: linear-gradient(-20deg, #6e45e2 0%, #88d3ce 100%);
+                  }
 
-      .wide-tip {
-        min-width: 270px;
-      }
+                  .wide-tip {
+                    min-width: 270px;
+                  }
 
-      .wide-tip .icon {
-        width: 1.2em;
-        height: 1em;
-      }
+                  .wide-tip .icon {
+                    width: 1.2em;
+                    height: 1em;
+                  }
 
-      .resetall button {
-        padding: 5px 0;
-        min-width: 3rem;
-        font-size: 0.9em;
-      }
-      .glyphicon-sort:after {
-        content: "⇅";
-      }
-      .glyphicon-arrow-up:after {
-        content: "⤒";
-      }
-      .glyphicon-arrow-down:after {
-        content: "⤓";
-      }
+                  .resetall button {
+                    padding: 5px 0;
+                    min-width: 3rem;
+                    font-size: 0.9em;
+                  }
+                  .glyphicon-sort:after {
+                    content: "⇅";
+                  }
+                  .glyphicon-arrow-up:after {
+                    content: "⤒";
+                  }
+                  .glyphicon-arrow-down:after {
+                    content: "⤓";
+                  }
 
-      .flag-icon,
-      .country-flag {
-font-family: "Twemoji Country Flags"!important;
-        font-size: 1.4em!important;
-      }
-
-      img.face {
-        width: 40px;
-        height: 50px;
-        border-radius: 25px;
-        position: relative;
-        margin-left: -10px;
-        margin-right: 10px;
-      }
-
-      th .glyphicon {
-        margin-left: 5px;
-        color: black;
-        font-size: 1.3em;
-        border: 1px solid grey;
-        text-align: center;
-        width: 1.3em;
-        border-radius: 2px;
-        display: inline-block;
-      }
-
-      th#country,
-      th#eugroup,
-      th#col_0,
-      th#col_1,
-      th#twitter {
-        min-width: 100px;
-        padding-right: 0.75rem;
-        padding-left: 0.75rem;
-      }
-
-      .icon,
-      .eugroup {
-        display: inline-block;
-        width: 25px;
-        height: 25px;
-        text-indent: 100%;
-        white-space: nowrap;
-        overflow: hidden;
-        background-size: cover;
-        background-position: center;
-      }
-
-      .patriots {
-        background-image: url("img/eugroups/patriots.png");
-      }
-      .esn {
-        background-image: url("img/eugroups/esn.png");
-      }
-
-      .ppe,
-      .epp {
-        background-image: url("img/eugroups/epp.png");
-      }
-
-      .s-d {
-        background-image: url("img/eugroups/sd.png");
-      }
-
-      .renew {
-        background-image: url("img/eugroups/renew.png");
-      }
-
-      .verts-ale,
-      .greens-efa {
-        background-image: url("img/eugroups/greensefa.png");
-      }
+                  .flag-icon,
+                  .country-flag {
+            font-family: "Twemoji Country Flags"!important;
+                    font-size: 1.4em!important;
+                  }
 
 
-      .the-left, .gue-ngl {
-        background-image: url("img/eugroups/leftgue.png");
-      }
+
+                  img.face {
+                    width: 40px;
+                    height: 50px;
+                    border-radius: 25px;
+                    position: relative;
+                    margin-left: -10px;
+                    margin-right: 10px;
+                  }
+
+                  th .glyphicon {
+                    margin-left: 5px;
+                    color: black;
+                    font-size: 1.3em;
+                    border: 1px solid grey;
+                    text-align: center;
+                    width: 1.3em;
+                    border-radius: 2px;
+                    display: inline-block;
+                  }
+
+                  th#country,
+                  th#eugroup,
+                  th#col_0,
+                  th#col_1,
+                  th#twitter {
+                    min-width: 100px;
+                    padding-right: 0.75rem;
+                    padding-left: 0.75rem;
+                  }
+
+                  .icon,
+                  .eugroup {
+                    display: inline-block;
+                    width: 25px;
+                    height: 25px;
+                    text-indent: 100%;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    background-size: cover;
+                    background-position: center;
+                  }
+
+      svg.icon-against use { color: #c0392b;}
+      svg.icon-abstention use { color: #2980b9;}
+      svg.icon-for use { color: #27ae60;}
+      svg.icon-attended use { color: #6699CC}
+      .pie-slice use {color: #fff}
+
+                  .patriots {
+                    background-image: url("img/eugroups/patriots.png");
+                  }
+                  .esn {
+                    background-image: url("img/eugroups/esn.png");
+                  }
+
+                  .ppe,
+                  .epp {
+                    background-image: url("img/eugroups/epp.png");
+                  }
+
+                  .s-d {
+                    background-image: url("img/eugroups/sd.png");
+                  }
+
+                  .renew {
+                    background-image: url("img/eugroups/renew.png");
+                  }
+
+                  .verts-ale,
+                  .greens-efa {
+                    background-image: url("img/eugroups/greensefa.png");
+                  }
 
 
-      .ecr {
-        background-image: url("img/eugroups/ecr.png");
-      }
+                  .the-left, .gue-ngl {
+                    background-image: url("img/eugroups/leftgue.png");
+                  }
 
-      .na,
-      .ni,
-      .na-ni {
-        background-image: url("img/eugroups/ni.png");
-      }
+
+                  .ecr {
+                    background-image: url("img/eugroups/ecr.png");
+                  }
+
+                  .na,
+                  .ni,
+                  .na-ni {
+                    background-image: url("img/eugroups/ni.png");
+                  }
     </style>
   </head>
   <body>
@@ -326,7 +334,11 @@ font-family: "Twemoji Country Flags"!important;
                     <th>Name</th>
                     <th>Country</th>
                     <th>Group</th>
-                    <th title="voted against the majority of their group, or switched to another group since the vote">Rebel</th>
+                    <th
+                      title="voted against the majority of their group, or switched to another group since the vote"
+                    >
+                      Rebel
+                    </th>
                     <th>Party</th>
                   </tr>
                 </thead>
@@ -361,11 +373,10 @@ font-family: "Twemoji Country Flags"!important;
     <script src="../dist/js/dcbundle.js"></script>
     <script src="js/vote.js"></script>
     <script>
-      var voteid = urlParam("v");
-      var resultscolor = null;
+      voteid = urlParam("v");
       var percentagecolor = null;
       const isMobile = window.matchMedia(
-        "screen and (max-width: 768px)"
+        "screen and (max-width: 768px)",
       ).matches;
 
       isMobile &&
@@ -379,7 +390,7 @@ font-family: "Twemoji Country Flags"!important;
         d3.select(".navbar-toggler").on("click", function () {
           d3.select("#navbarHeader").classed(
             "show",
-            d3.select("#navbarHeader").classed("show")
+            d3.select("#navbarHeader").classed("show"),
           );
         });
         d3.select("h2").html(config.name == "CHANGE ME" ? "" : config.name);
@@ -392,11 +403,11 @@ font-family: "Twemoji Country Flags"!important;
                 "'>" +
                 config.ref +
                 "</a>"
-            : config.ref
+            : config.ref,
         );
         d3.select(".navbar .app").attr(
           "href",
-          "presentation/demo.html?v=" + config.id
+          "presentation/demo.html?v=" + config.id,
         );
         d3.select(".navbar .graph").attr("href", "graph.html?v=" + config.id);
         d3.select(".navbar .edit").attr("href", "edit.html?v=" + config.id);
@@ -423,10 +434,6 @@ font-family: "Twemoji Country Flags"!important;
             "#27ae60",
           ];
         }
-        resultscolor = d3
-          .scaleOrdinal()
-          .domain(results)
-          .range("#27ae60,#c0392b,#2980b9,#95a5a6,#34495e,#bdc3c7".split(","));
 
         percentagecolor = d3
           .scaleLinear()
@@ -767,7 +774,6 @@ font-family: "Twemoji Country Flags"!important;
         return store[key(mep)] && store[key(mep)] !== mep.vote;
       }
       function drawResult(dom) {
-        const radius = (window.screen.width - 60) / 2;
         var graph = dc.pieChart(dom).innerRadius(40); //.radius(radius);
         var dim = ndx.dimension(function (d) {
           return d.vote || "?";
@@ -775,6 +781,7 @@ font-family: "Twemoji Country Flags"!important;
         var group = dim.group().reduceSum(function (d) {
           return 1;
         });
+
         graph
           .width(0)
           .height(0)
@@ -795,8 +802,37 @@ font-family: "Twemoji Country Flags"!important;
           .dimension(dim)
           .group(group)
           .externalLabels(-26)
-          .minAngleForLabel(0.2);
+          //          .minAngleForLabel(0.2);
+          .renderLabel(false);
+
         //        .legend(dc.legend().horizontal(true).autoItemWidth(true).y(200));
+        graph.on("pretransition", function (chart) {
+          const arc = d3
+            .arc()
+            .innerRadius(chart.innerRadius())
+            .outerRadius(chart.width() / 2);
+
+          chart.selectAll(".pie-slice").each(function (d, i) {
+            const minAngle = d.endAngle - d.startAngle;
+
+            const [x, y] = arc.centroid(d);
+            d3.select(this).select("use").remove();
+
+            if (minAngle < 0.2) return;
+
+            d3.select(this)
+              .append("use")
+              .attr("width", 20)
+              .attr("height", 20)
+              .attr("x", x - 10) // Adjust to centre the icon
+              .attr("y", y - 10)
+              .attr("href", `#icon-${d.data.key}`);
+          });
+          /*            .call(tip)
+            .on("mouseover.tip", tip.show)
+            .on("mouseout.tip", tip.hide);
+*/
+        });
         return graph;
       }
 
@@ -911,7 +947,7 @@ font-family: "Twemoji Country Flags"!important;
             graph.relative = b.classed("btn-relative");
             b.classed("active", false);
             d3.select(
-              "#country .btn-" + (graph.relative ? "absolute" : "relative")
+              "#country .btn-" + (graph.relative ? "absolute" : "relative"),
             ).classed("active", true);
             graph.yAxisLabel((graph.relative ? "%" : "#") + "MEPs");
             graph.redraw();
@@ -975,7 +1011,7 @@ font-family: "Twemoji Country Flags"!important;
                 [0, 0],
                 [width * 1.3, width / 1.3],
               ],
-              geojson
+              geojson,
             );
 
           var graph = dc
@@ -1119,24 +1155,25 @@ font-family: "Twemoji Country Flags"!important;
           .group(group, "", 0)
           .on("renderlet", function (c) {
             //!isMobile &&
-            if (!d3.select("#country .axis.x .tick text.country-flag").empty()) return;;
+            if (!d3.select("#country .axis.x .tick text.country-flag").empty())
+              return;
             rotateBarChartLabels();
             d3.select("#country .axis.x")
               .selectAll(".tick")
-.append("text")
-//            .style("text-anchor", "start")
-.text(d => flag(d))
-.attr("y",20)
-.attr("x",2)
-.attr("fill","currentColor")
-.attr("class","country-flag")
-//              .append("use")
-//              .attr("href", function (d) {
-//                return "#flag-" + d;
-//              })
-            .attr("width", 24)
-            .attr("height", 16)
-//            .attr("transform", "translate(-10,2)");
+              .append("text")
+              //            .style("text-anchor", "start")
+              .text((d) => flag(d))
+              .attr("y", 20)
+              .attr("x", 2)
+              .attr("fill", "currentColor")
+              .attr("class", "country-flag")
+              //              .append("use")
+              //              .attr("href", function (d) {
+              //                return "#flag-" + d;
+              //              })
+              .attr("width", 24)
+              .attr("height", 16);
+            //            .attr("transform", "translate(-10,2)");
           });
         graph.xAxis().ticks(3);
         //      res.shift();
@@ -1169,7 +1206,7 @@ font-family: "Twemoji Country Flags"!important;
             graph.relative = b.classed("btn-relative");
             b.classed("active", false);
             d3.select(
-              "#country .btn-" + (graph.relative ? "absolute" : "relative")
+              "#country .btn-" + (graph.relative ? "absolute" : "relative"),
             ).classed("active", true);
             graph.yAxisLabel((graph.relative ? "%" : "#") + "MEPs");
             graph.redraw();
@@ -1252,13 +1289,13 @@ font-family: "Twemoji Country Flags"!important;
                 return (
                   "" +
                   formatPercent(
-                    Math.max(d.value.for.count, d.value.against.count) / sum
+                    Math.max(d.value.for.count, d.value.against.count) / sum,
                   ) +
                   "&nbsp;" +
                   iconify(
                     d.value.for.count > d.value.against.count
                       ? "for"
-                      : "against"
+                      : "against",
                   )
                 );
               })
@@ -1440,7 +1477,13 @@ font-family: "Twemoji Country Flags"!important;
               return t;
             },
             function (d) {
-                        return '<span class="country-flag" title="'+d.country+'">' + iconify(d.country,"flag") + '</span>';
+              return (
+                '<span class="country-flag" title="' +
+                d.country +
+                '">' +
+                iconify(d.country, "flag") +
+                "</span>"
+              );
             },
             function (d) {
               return (
@@ -1529,7 +1572,7 @@ font-family: "Twemoji Country Flags"!important;
               var up = icon.classed("glyphicon-arrow-up");
               d3.selectAll("th.sortable .glyphicon").attr(
                 "class",
-                "glyphicon glyphicon-sort"
+                "glyphicon glyphicon-sort",
               );
               if (!up) {
                 icon.attr("class", "glyphicon glyphicon-arrow-up");
@@ -1552,7 +1595,7 @@ font-family: "Twemoji Country Flags"!important;
 
           d3.select("th#col_0 i").attr(
             "class",
-            "glyphicon glyphicon-arrow-down"
+            "glyphicon glyphicon-arrow-down",
           );
         }
       }
@@ -1577,7 +1620,7 @@ font-family: "Twemoji Country Flags"!important;
           return uri;
         } else {
           var results = new RegExp("[\?&]" + name + "=([^&#]*)").exec(
-            window.location.href
+            window.location.href,
           );
           if (results == null) {
             return null;
@@ -1588,8 +1631,11 @@ font-family: "Twemoji Country Flags"!important;
       }
     </script>
 
-    <svg class="d-none" id="icons">
+    <svg>
       <defs>
+        <filter id="blur-filter" x="0" y="0">
+          <feGaussianBlur stdDeviation="1" />
+        </filter>
         <filter id="glow">
           <feGaussianBlur stdDeviation="3.5" result="coloredBlur">
             <feMerge in="SourceGraphic">
@@ -1598,6 +1644,8 @@ font-family: "Twemoji Country Flags"!important;
           </feGaussianBlur>
         </filter>
       </defs>
+    </svg>
+    <svg class="d-none" id="icons">
       <symbol id="menu" viewBox="0 0 24 24">
         <path d="M0 0h24v24H0z" fill="none" />
         <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
@@ -1610,23 +1658,33 @@ font-family: "Twemoji Country Flags"!important;
       </symbol>
       <symbol id="icon-against" viewBox="0 0 24 24">
         <path
-          fill="#c0392b"
+          fill="currentColor"
+          _fill="#c0392b"
           d="M19,15H23V3H19M15,3H6C5.17,3 4.46,3.5 4.16,4.22L1.14,11.27C1.05,11.5 1,11.74 1,12V14A2,2 0 0,0 3,16H9.31L8.36,20.57C8.34,20.67 8.33,20.77 8.33,20.88C8.33,21.3 8.5,21.67 8.77,21.94L9.83,23L16.41,16.41C16.78,16.05 17,15.55 17,15V5C17,3.89 16.1,3 15,3Z"
         />
       </symbol>
       <symbol id="icon-for" viewBox="0 0 24 24">
         <path
-          fill="#27ae60"
+          fill="currentColor"
           d="M23,10C23,8.89 22.1,8 21,8H14.68L15.64,3.43C15.66,3.33 15.67,3.22 15.67,3.11C15.67,2.7 15.5,2.32 15.23,2.05L14.17,1L7.59,7.58C7.22,7.95 7,8.45 7,9V19A2,2 0 0,0 9,21H18C18.83,21 19.54,20.5 19.84,19.78L22.86,12.73C22.95,12.5 23,12.26 23,12V10M1,21H5V9H1V21Z"
         />
       </symbol>
       <symbol id="icon-abstention" viewBox="0 0 24 24">
         <path
           transform="rotate(240 12 12)"
-          fill="#2980b9"
+          fill="currentColor"
           d="M23,10C23,8.89 22.1,8 21,8H14.68L15.64,3.43C15.66,3.33 15.67,3.22 15.67,3.11C15.67,2.7 15.5,2.32 15.23,2.05L14.17,1L7.59,7.58C7.22,7.95 7,8.45 7,9V19A2,2 0 0,0 9,21H18C18.83,21 19.54,20.5 19.84,19.78L22.86,12.73C22.95,12.5 23,12.26 23,12V10M1,21H5V9H1V21Z"
         />
       </symbol>
+      <symbol id="icon-attended" viewBox="0 0 24 24">
+        <path
+          fill="currentColor"
+          filter="url(#blur-filter)"
+          transform="rotate(66 12 12)"
+          d="m10.89 18.28.57-2.89c.12-.59-.04-1.2-.42-1.66S10.1 13 9.5 13H4v-1.08L6.57 6h8.09c.18 0 .34.16.34.34v7.84zM10 22l6.41-6.41c.38-.38.59-.89.59-1.42V6.34C17 5.05 15.95 4 14.66 4h-8.1c-.71 0-1.36.37-1.72.97l-2.67 6.15c-.11.25-.17.52-.17.8V13c0 1.1.9 2 2 2h5.5l-.92 4.65c-.05.22-.02.46.08.66.23.45.52.86.88 1.22zm10-7h2V4h-2c-.55 0-1 .45-1 1v9c0 .55.45 1 1 1"
+        ></path>
+      </symbol>
+
       <symbol id="icon-rebel" viewBox="0 0 24 24">
         <path
           d="M23 5.5V20c0 2.2-1.8 4-4 4h-7.3c-1.08 0-2.1-.43-2.85-1.19L1 14.83s1.26-1.23 1.3-1.25c.22-.19.49-.29.79-.29.22 0 .42.06.6.16.04.01 4.31 2.46 4.31 2.46V4c0-.83.67-1.5 1.5-1.5S11 3.17 11 4v7h1V1.5c0-.83.67-1.5 1.5-1.5S15 .67 15 1.5V11h1V2.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5V11h1V5.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5z"
