@@ -46,7 +46,6 @@ function arrayToCSV(data) {
 function downloadCSV(id) {
   const data =graphs.table.dimension().top(Infinity).map (d => ({vote:d.vote,firstname:d.firstname,lastname:d.lastname,country:d.country,id:d.epid,group:d.eugroup,party:d.party}));
 //  const data = ndx.all().map (...
-console.log(data);
   const csvData = arrayToCSV(data);
   const blob = new Blob([csvData], { type: "text/csv" });
   const url = window.URL.createObjectURL(blob);
@@ -63,7 +62,7 @@ const groupAlias = {
   NI: "NA",
   //  "The Left": "GUE/NGL",
   "GUE/NGL": "The Left",
-  "Pfe": "Patriots",
+  "PfE": "Patriots",
 };
 var countries = {
   be: "Belgium",
@@ -127,7 +126,8 @@ const formatPercent = d3.format(".0%");
 
 function download(voteid, callback) {
   function isActive(d) {
-    //relies on global config.date, the date of the vote
+    //relies on global config.date, the date of the vote 
+//TODO : add start10 and use it
     return d.start9 <= config.date && (d.end == null || d.end >= config.date);
   }
 
@@ -243,6 +243,9 @@ function dl_votes(callback) {
     d.mepid = +d.mepid;
     d.vote_id = +d.vote_id;
     d.identifier = +d.identifier;
+    if (groupAlias[d.eugroup]) {
+      d.eugroup = groupAlias[d.eugroup];
+    }
     return d;
   }).then(function (d) {
     votes = d;
