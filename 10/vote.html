@@ -57,7 +57,7 @@
                   }
 
                   .wide-tip {
-                    min-width: 270px;
+                    min-width: 370px;
                   }
 
                   .wide-tip .icon {
@@ -374,6 +374,9 @@
     <script src="js/vote.js"></script>
     <script>
       voteid = urlParam("v");
+        const aliasPosition = { 
+        attended: "present at the plenary, but didn't vote",
+        "no show": "not present at the plenary"};
       var percentagecolor = null;
       const isMobile = window.matchMedia(
         "screen and (max-width: 768px)",
@@ -664,6 +667,7 @@
           return d.eugroup || "?";
         });
 
+
         var tip = d3
           .tip()
           .attr("class", "d3-tip wide-tip")
@@ -671,7 +675,7 @@
           .html(function (d) {
             var t =
               "<h3 class='d-flex flex-row justify-content-between' ><span>" +
-              d.data.key +
+              aliasPosition[d.data.key] || d.data.key +
               "</span><span class='d-inline-flex p-2 badge badge-primary ml-2'>" +
               d.data.value.count +
               "</span></h3>";
@@ -679,7 +683,7 @@
               if (d.data.value[r].count > 0) {
                 t +=
                   "<div class='d-flex flex-row justify-content-between'><div class='p-2 bd-highlight mr-auto w-50'>" +
-                  r +
+                  (aliasPosition[r] || r) +
                   "</div><div class='p-1 w-25'>" +
                   d.data.value[r].count +
                   "</div><div class='p-1 w-25'>" +
@@ -703,7 +707,6 @@
 
         var group = dim.group();
         reducer(group);
-
         //    var group = dim.group().reduceSum(function(d) {return 1;});
         graph
           .width(0)
@@ -714,6 +717,9 @@
           .colorAccessor(function (d) {
             var sum = d.value.for.count + d.value.against.count;
             return (100 * d.value.against.count) / sum;
+          })
+          .label ( d => {
+ return labelPosition[d.key] || d.key + " : " + d.value + " meps";
           })
           .colors(function (d) {
             return percentagecolor(d);
@@ -788,6 +794,9 @@
           .ordering(function (d) {
             return results.indexOf(d.key) >= 0 ? results.indexOf(d.key) : 1984;
           })
+          .title ( d => 
+ (aliasPosition[d.key] || d.key) + ": " + d.value + " meps"
+          )
           .colors(resultscolor)
           /*      .colorCalculator(function(d, i) {
         return eu_groups[d.key];
@@ -893,7 +902,7 @@
             return (
               d.key +
               " voting '" +
-              this.layer +
+              (aliasPosition[this.layer] || this.layer) +
               "': " +
               d.value[this.layer].count +
               " (" +
@@ -983,7 +992,7 @@
                 t +=
                   "<div class='d-flex flex-row justify-content-between'><div class='p-1 bd-highlight mr-auto w-50'>" +
                   iconify(r) +
-                  r +
+                  (aliasPosition[r] || r) +
                   "</div><div class='p-1 w-25'>" +
                   d.value[r].count +
                   "</div><div class='p-1 w-25'>" +
@@ -1139,7 +1148,7 @@
             return (
               countries[d.key] +
               " voting '" +
-              this.layer +
+              (aliasPosition[this.layer] || this.layer) +
               "': " +
               d.value[this.layer].count +
               " (" +
