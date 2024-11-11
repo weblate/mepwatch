@@ -638,9 +638,6 @@ mepid,result,eugroup,identifier
 257120,abstention,NI,169385
 257118,abstention,NI,169385
 840,abstention,Renew,169385
-<<<<<<< HEAD
-197470,abstention,Verts/ALE,169385
-=======
 197470,abstention,Verts/ALE,169385
 1294,attended,S&D,169385
 28226,attended,EPP,169385
@@ -715,4 +712,3 @@ mepid,result,eugroup,identifier
 257259,attended,Renew,169385
 257300,attended,Renew,169385
 257301,attended,Renew,169385
->>>>>>> a01875a6273c0097c18f1d0ddc2603ef91b9fe62

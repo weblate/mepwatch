@@ -640,9 +640,6 @@ mepid,result,eugroup,identifier
 124875,against,PfE,169701
 257255,abstention,ESN,169701
 256881,abstention,PfE,169701
-<<<<<<< HEAD
-185771,abstention,PfE,169701
-=======
 185771,abstention,PfE,169701
 4395,attended,ECR,169701
 28615,attended,ECR,169701
@@ -676,4 +673,3 @@ mepid,result,eugroup,identifier
 257127,attended,GUE/NGL,169701
 257129,attended,GUE/NGL,169701
 261797,attended,Patriots,169701
->>>>>>> a01875a6273c0097c18f1d0ddc2603ef91b9fe62

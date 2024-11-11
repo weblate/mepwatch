@@ -611,9 +611,6 @@ mepid,result,eugroup,identifier
 256843,abstention,PfE,169856
 220897,abstention,PfE,169856
 256850,abstention,PfE,169856
-<<<<<<< HEAD
-125001,abstention,PfE,169856
-=======
 125001,abstention,PfE,169856
 23816,attended,Patriots,169856
 28150,attended,Patriots,169856
@@ -650,4 +647,3 @@ mepid,result,eugroup,identifier
 257255,attended,ESN,169856
 260724,attended,Patriots,169856
 261797,attended,Patriots,169856
->>>>>>> a01875a6273c0097c18f1d0ddc2603ef91b9fe62

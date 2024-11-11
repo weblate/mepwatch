@@ -572,9 +572,6 @@ mepid,result,eugroup,identifier
 256843,abstention,PfE,170365
 256844,abstention,PfE,170365
 256855,abstention,PfE,170365
-<<<<<<< HEAD
-256859,abstention,PfE,170365
-=======
 256859,abstention,PfE,170365
 30482,attended,GUE/NGL,170365
 110673,attended,EPP,170365
@@ -612,4 +609,3 @@ mepid,result,eugroup,identifier
 257261,attended,EPP,170365
 257298,attended,Renew,170365
 257300,attended,Renew,170365
->>>>>>> a01875a6273c0097c18f1d0ddc2603ef91b9fe62
