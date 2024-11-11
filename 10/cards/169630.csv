@@ -623,7 +623,10 @@ mepid,result,eugroup,identifier
 96932,attended,S&D,169630
 98582,attended,EPP,169630
 101585,attended,S&D,169630
+<<<<<<< HEAD
 112747,excused,S&D,169630
+=======
+>>>>>>> a01875a6273c0097c18f1d0ddc2603ef91b9fe62
 118859,attended,EPP,169630
 122978,excused,S&D,169630
 125106,attended,ECR,169630
@@ -635,6 +638,7 @@ mepid,result,eugroup,identifier
 197470,attended,Greens/EFA,169630
 197578,attended,Patriots,169630
 197662,attended,EPP,169630
+<<<<<<< HEAD
 197677,excused,S&D,169630
 197699,attended,GUE/NGL,169630
 197722,excused,S&D,169630
@@ -642,6 +646,12 @@ mepid,result,eugroup,identifier
 244571,attended,S&D,169630
 249982,attended,NA,169630
 256813,excused,Greens/EFA,169630
+=======
+197699,attended,GUE/NGL,169630
+197839,attended,EPP,169630
+244571,attended,S&D,169630
+249982,attended,NA,169630
+>>>>>>> a01875a6273c0097c18f1d0ddc2603ef91b9fe62
 256823,attended,GUE/NGL,169630
 256844,attended,Patriots,169630
 256858,attended,NA,169630
@@ -649,8 +659,13 @@ mepid,result,eugroup,identifier
 256952,attended,GUE/NGL,169630
 256954,attended,Patriots,169630
 256985,attended,EPP,169630
+<<<<<<< HEAD
 256997,excused,S&D,169630
 257023,attended,GUE/NGL,169630
 257077,attended,ECR,169630
 257130,excused,Greens/EFA,169630
+=======
+257023,attended,GUE/NGL,169630
+257077,attended,ECR,169630
+>>>>>>> a01875a6273c0097c18f1d0ddc2603ef91b9fe62
 257255,attended,ESN,169630
