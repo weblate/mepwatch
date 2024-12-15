@@ -423,9 +423,6 @@ mepid,result,eugroup,identifier
 256939,abstention,NI,169725
 220908,abstention,PPE,169725
 124713,abstention,PPE,169725
-<<<<<<< HEAD
-256987,abstention,Renew,169725
-=======
 256987,abstention,Renew,169725
 1294,attended,S&D,169725
 1927,attended,EPP,169725
@@ -630,4 +627,3 @@ mepid,result,eugroup,identifier
 257300,attended,Renew,169725
 257301,attended,Renew,169725
 260035,attended,S&D,169725
->>>>>>> a01875a6273c0097c18f1d0ddc2603ef91b9fe62

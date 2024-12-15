@@ -561,9 +561,6 @@ mepid,result,eugroup,identifier
 256927,abstention,The Left,170351
 257015,abstention,Verts/ALE,170351
 257016,abstention,Verts/ALE,170351
-<<<<<<< HEAD
-24942,abstention,Verts/ALE,170351
-=======
 24942,abstention,Verts/ALE,170351
 23816,attended,Patriots,170351
 28150,attended,Patriots,170351
@@ -611,4 +608,3 @@ mepid,result,eugroup,identifier
 257298,attended,Renew,170351
 257300,attended,Renew,170351
 260724,attended,Patriots,170351
->>>>>>> a01875a6273c0097c18f1d0ddc2603ef91b9fe62

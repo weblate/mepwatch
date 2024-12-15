@@ -579,9 +579,6 @@ mepid,result,eugroup,identifier
 257257,abstention,Renew,170356
 256839,abstention,Renew,170356
 256976,abstention,Renew,170356
-<<<<<<< HEAD
-197769,abstention,Renew,170356
-=======
 197769,abstention,Renew,170356
 30482,attended,GUE/NGL,170356
 118859,attended,EPP,170356
@@ -611,4 +608,3 @@ mepid,result,eugroup,identifier
 257256,attended,Renew,170356
 257261,attended,EPP,170356
 257298,attended,Renew,170356
->>>>>>> a01875a6273c0097c18f1d0ddc2603ef91b9fe62
