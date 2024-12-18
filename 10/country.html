@@ -174,19 +174,32 @@ background-color: white;
                   }
 
 #gridmeps h1 {font-size:1rem}
-#gridmeps .graph {width:1600px;height:900px; 
-    column-count: 5; /* Number of columns */
-    column-gap: 0px; /* Gap between columns */
-    padding: 20px; /* Add padding around the content */
-background:lightgrey;
+#gridmeps h3 {margin:10px 0 20px 0; text-align:center}
+#gridmeps {
+width:1600px;height:900px; 
+border: 1px solid lightgrey;
+}
+
+#gridmeps .graph {
+background: pink;
+  width:1580px;height:800px; 
+    column-count: 3; /* Number of columns */
+    column-gap: 10px; /* Gap between columns */
+}
+
+#gridmeps {
+transform-origin: top left;
+transform: scale(0.5);
+_transform: scale(calc(100vw / 1600));
+_zoom: calc(100vw / 1600);
 }
 
 #gridmeps .face {width:25px;height:30px}
-#gridmeps .graph {margin-top: 10px; padding-bottom:20px}
-.dc-grid-top {margin:10px 10px 0 10px; box-shadow:0 0 4px 0 rgba(0,0,0,.14),0 3px 4px 0 rgba(0,0,0,.12),0 1px 5px 0 rgba(0,0,0,.2); padding: 10px 10px;
-break-inside: avoid; 
+#gridmeps .graph {margin: 10px}
+.dc-grid-top { box-shadow:0 0 4px 0 rgba(0,0,0,.14),0 3px 4px 0 rgba(0,0,0,.12),0 1px 5px 0 rgba(0,0,0,.2); padding: 10px 10px;
 background-color:white;
-
+margin-bottom: 10px;
+break-inside: avoid; 
 }
 
 .allow-break {
@@ -306,8 +319,7 @@ width:100%;
         <div class="container">
           <div class="row">
             <div class="col-sm-12 col-md-12">
-              <h2 class="jumbotron-heading">Loading...</h2>
-              <h3 class="jumbotron-heading"></h3>
+              <input class="title form-control input-lg" />
             </div>
           </div>
         </div>
@@ -369,6 +381,7 @@ width:100%;
       </div>
 
       <div class="" id="gridmeps">
+<h3>Title</h3>
 <div class='graph'></div>
       </div>
     </main>
@@ -429,6 +442,7 @@ groupOrder='';
               d3.select(".navbar .graph").attr("href", "graph.html?v=" + config.id);
               d3.select(".navbar .edit").attr("href", "edit.html?v=" + config.id);
               d3.select("h3").html([config.title, config.description].join("<br>"));
+              d3.select("input.title").property("value",[config.name,config.title,config.description].join(" "));
               var percentColors = [
                 "#e3e3e3",
                 "#27ae60",
@@ -1334,7 +1348,24 @@ groupOrder='';
                 .section(function (d) {
                   return [ d.eugroup, d.party ];
                 })
-                .on("renderlet.t", function () {
+                .on("renderlet.t", function (chart) {
+
+console.log(chart);
+const container = document.querySelector('.container');
+
+// Get the computed styles of the container
+const styles = window.getComputedStyle(container);
+
+// Calculate the number of columns
+const columnWidth = parseFloat(styles.columnWidth); // The width of each column
+const gapWidth = parseFloat(styles.columnGap); // The gap between columns
+const containerWidth = container.clientWidth; // Total container width
+
+// Calculate the number of columns displayed
+const numColumns = Math.floor((containerWidth + gapWidth) / (columnWidth + gapWidth));
+
+console.log('Number of columns displayed:', numColumns);
+
   document.querySelectorAll('.item').forEach((item) => {
 console.log(item.offsetHeight);
     if (item.offsetHeight > 150) { // Example height threshold
