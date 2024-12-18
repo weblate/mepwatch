@@ -181,9 +181,9 @@ border: 1px solid lightgrey;
 }
 
 #gridmeps .graph {
-background: pink;
+_background: pink;
   width:1580px;height:800px; 
-    column-count: 3; /* Number of columns */
+    column-count: 5; /* Number of columns */
     column-gap: 10px; /* Gap between columns */
 }
 
@@ -398,7 +398,7 @@ width:100%;
     <script src="../dist/js/dcbundle.js"></script>
     <script src="js/vote.js"></script>
     <script>
-groupOrder='';
+groupOrder=['The Left','Greens/EFA','S&D','Renew','EPP','ECR','Patriots','ESN'];
             voteid = urlParam("v");
             const aliasPosition = {
               attended: "present at the plenary, but didn't vote",
@@ -441,7 +441,7 @@ groupOrder='';
               );
               d3.select(".navbar .graph").attr("href", "graph.html?v=" + config.id);
               d3.select(".navbar .edit").attr("href", "edit.html?v=" + config.id);
-              d3.select("h3").html([config.title, config.description].join("<br>"));
+              d3.select("h3").html([config.name,config.title, config.description].join("<br>"));
               d3.select("input.title").property("value",[config.name,config.title,config.description].join(" "));
               var percentColors = [
                 "#e3e3e3",
@@ -1344,15 +1344,21 @@ groupOrder='';
                   return d.lastname;
                 })
                 .html(tpl)
-                .htmlSection(d => {console.log(d); return d.key.split(',')[1]})
+                .htmlSection(d => {
+const [position,group, party] = d.key.split(',');
+return party;
+})
                 .section(function (d) {
-                  return [ d.eugroup, d.party ];
+   if (groupOrder.indexOf(d.eugroup) !== -1) {
+     return [ groupOrder.indexOf(d.eugroup),d.eugroup, d.party ]
+   }
+
+console.log("no order for", d.eugroup, d.party,groupOrder.indexOf(d.eugroup),groupOrder);
+                  return [ 999, d.eugroup, d.party ];
                 })
                 .on("renderlet.t", function (chart) {
-
-console.log(chart);
-const container = document.querySelector('.container');
-
+//TODO: adjust the number of columns
+const container = d3.select(chart.anchor()).node();
 // Get the computed styles of the container
 const styles = window.getComputedStyle(container);
 
@@ -1360,17 +1366,21 @@ const styles = window.getComputedStyle(container);
 const columnWidth = parseFloat(styles.columnWidth); // The width of each column
 const gapWidth = parseFloat(styles.columnGap); // The gap between columns
 const containerWidth = container.clientWidth; // Total container width
+console.log(columnWidth, gapWidth, containerWidth);
 
 // Calculate the number of columns displayed
 const numColumns = Math.floor((containerWidth + gapWidth) / (columnWidth + gapWidth));
 
 console.log('Number of columns displayed:', numColumns);
-
-  document.querySelectorAll('.item').forEach((item) => {
-console.log(item.offsetHeight);
-    if (item.offsetHeight > 150) { // Example height threshold
-      item.classList.add('allow-break');
-    }
+ d3.select(chart.anchor())
+        .selectAll('.dc-grid-top')
+  .each (function () {
+const element = d3.select(this);
+           const height = element.node().getBoundingClientRect().height;
+            if (height > 150) {
+console.log(element);
+                element.classed('allow-break', true);
+            }
   });
 //                  d3.selectAll(".dc-grid-item").attr("class", "grid mep");
 //                  d3.selectAll(".dc-grid-top").attr("class", "row");
