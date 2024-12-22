@@ -277,6 +277,20 @@ function dl_meps(callback) {
   });
 }
 
+function dl_parties(callback) {
+  return d3.csv("data/parties.csv", function (d) {
+//    if (!d.mepid) return null;
+//    d.mepid = +d.mepid;
+//    d.vote_id = +d.vote_id;
+//    d.identifier = +d.identifier;
+//    if (groupAlias[d.eugroup]) {
+//      d.eugroup = groupAlias[d.eugroup];
+//    }
+    return d;
+  })
+}
+
+
 d3.select(window).on("resize.updatedc", function () {
   dc.events.trigger(function () {
     dc.chartRegistry.list().forEach(function (chart) {
