@@ -201,6 +201,7 @@
       }
 
       .dc-grid-top span {float:right; width:50px; height: 50px;}
+      .dc-grid-top img {width:50px; height: 50px;}
 
       #face {
          width: 20px;
@@ -436,6 +437,7 @@
               "ESN",
               "NA",
             ];
+            let country = urlParam("country");
             voteid = urlParam("v");
             const aliasPosition = {
               attended: "present at the plenary, but didn't vote",
@@ -1166,6 +1168,7 @@
           } else {
               dimension.filter(null);
           }
+          country =  filters.slice(-1)[0];
           return filters.slice(-1); // Return only the last filter
       });
               return graph;
@@ -1393,7 +1396,6 @@
             }
 
             function drawGrid(dom) {
-              const country = urlParam("country")?.toLowerCase() || '';
               const _columns = d3
                 .scaleLinear()
                 .domain([15, 33, 76, 81, 96])
