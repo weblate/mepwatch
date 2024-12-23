@@ -200,8 +200,20 @@
       _zoom: calc(100vw / 1600);
       }
 
-      .dc-grid-top span {float:right; width:50px; height: 50px;}
-      .dc-grid-top img {width:50px; height: 50px;}
+      .dc-grid-top .party {  display: flex;
+  align-items: center;
+  width: 100%; }
+
+      .party img, .party svg {flex: 0 0 auto; max-width:50px;}
+
+.party span.img-rounded {}
+.party span.text {
+  flex: 1 1 auto; /* Allow text to take up remaining space */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
 
       #face {
          width: 20px;
@@ -458,7 +470,6 @@
 
             const getParty = (name, country) =>{
               const party = parties.find (d => d.party === name && d.country===country);
-      console.log(name, country,party);
               return party;
             }
 
@@ -1433,17 +1444,17 @@
                   const [position, group, party] = d.key.split(",");
                   const full = getParty (party,country);
                   if (full) {
-                    return ( ""+
+                    return ( "<div class='party'>"+
                      ( full.picture && "<img src='"+full.picture+"' title='"+full.party+"' />"
                      )
-                      + (full.acronym || full.party)
+                      + "<span class='text'>" + (full.acronym || full.party) + "</span>" 
                       +  "<span title='" +
                       group +
                       "' class='img-rounded text-filter eugroup " +
                       group.replace(/&|\/| |car/g, "-").toLowerCase() +
                       "'>" +
                       group +
-                      "</span>"
+                      "</span></div>"
                     );
                   }
                     return (party +
