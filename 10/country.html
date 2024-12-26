@@ -20,261 +20,261 @@
     <link rel="prefetch" href="./data/meps.csv" as="fetch" />
 
     <style>
-                        body {font-family: "Twemoji Country Flags", Roboto,-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-                        span.form-control {
-                          border-bottom: 0px;
-                        }
+                              body {font-family: "Twemoji Country Flags", Roboto,-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+                              span.form-control {
+                                border-bottom: 0px;
+                              }
 
 
-                        .rotated90 svg {
-                          background-color: rgba(255, 255, 255, 0.7);
-                        }
-                        .rotated90 .axis path {
-                          display: none;
-                        }
-                        .rotated90 .y {
-                          display: none;
-                        }
+                              .rotated90 svg {
+                                background-color: rgba(255, 255, 255, 0.7);
+                              }
+                              .rotated90 .axis path {
+                                display: none;
+                              }
+                              .rotated90 .y {
+                                display: none;
+                              }
 
-                        #party  {
-      background-color: white;
-                        }
-      #party text{
-        stroke: white;
-        stroke-width: 3px;
-        paint-order: stroke fill;
+                              #party  {
+            background-color: white;
+                              }
+            #party text{
+              stroke: white;
+              stroke-width: 3px;
+              paint-order: stroke fill;
+            }
+
+                              .stack .barLabel {
+                                display: none;
+                              }
+                              .rotated90 svg > g {
+                                transform: rotate(90deg);
+                                transform-origin: 50% 50%;
+                              }
+
+                              html .bg-info {
+                                background-image: linear-gradient(-20deg, #6e45e2 0%, #88d3ce 100%);
+                              }
+
+                              .wide-tip {
+                                min-width: 370px;
+                              }
+
+                              .wide-tip .icon {
+                                width: 1.2em;
+                                height: 1em;
+                              }
+
+                              .resetall button {
+                                padding: 5px 0;
+                                min-width: 3rem;
+                                font-size: 0.9em;
+                              }
+                              .glyphicon-sort:after {
+                                content: "⇅";
+                              }
+                              .glyphicon-arrow-up:after {
+                                content: "⤒";
+                              }
+                              .glyphicon-arrow-down:after {
+                                content: "⤓";
+                              }
+
+                              .flag-icon,
+                              .country-flag {
+                        font-family: "Twemoji Country Flags"!important;
+                                font-size: 1.4em!important;
+                              }
+
+
+
+                              img.face {
+                                width: 40px;
+                                height: 50px;
+                                border-radius: 25px;
+                                position: relative;
+                                margin-left: -10px;
+                                margin-right: 10px;
+                              }
+
+                              th .glyphicon {
+                                margin-left: 5px;
+                                color: black;
+                                font-size: 1.3em;
+                                border: 1px solid grey;
+                                text-align: center;
+                                width: 1.3em;
+                                border-radius: 2px;
+                                display: inline-block;
+                              }
+
+                              th#country,
+                              th#eugroup,
+                              th#col_0,
+                              th#col_1,
+                              th#twitter {
+                                min-width: 100px;
+                                padding-right: 0.75rem;
+                                padding-left: 0.75rem;
+                              }
+
+                              .icon,
+                              .eugroup {
+                                display: inline-block;
+                                width: 25px;
+                                height: 25px;
+                                text-indent: 100%;
+                                white-space: nowrap;
+                                overflow: hidden;
+                                background-size: cover;
+                                background-position: center;
+                              }
+
+                  svg.icon-against use { color: #c0392b;}
+                  svg.icon-abstention use { color: #2980b9;}
+                  svg.icon-for use { color: #27ae60;}
+                  svg.icon-attended use { color: #6699CC}
+                  .pie-slice use {color: #fff}
+
+                              .patriots {
+                                background-image: url("img/eugroups/patriots.png");
+                              }
+                              .esn {
+                                background-image: url("img/eugroups/esn.png");
+                              }
+
+                              .ppe,
+                              .epp {
+                                background-image: url("img/eugroups/epp.png");
+                              }
+
+                              .s-d {
+                                background-image: url("img/eugroups/sd.png");
+                              }
+
+                              .renew {
+                                background-image: url("img/eugroups/renew.png");
+                              }
+
+                              .verts-ale,
+                              .greens-efa {
+                                background-image: url("img/eugroups/greensefa.png");
+                              }
+
+
+                              .the-left, .gue-ngl {
+                                background-image: url("img/eugroups/leftgue.png");
+                              }
+
+
+                              .ecr {
+                                background-image: url("img/eugroups/ecr.png");
+                              }
+
+                              .na,
+                              .ni,
+                              .na-ni {
+                                background-image: url("img/eugroups/ni.png");
+                              }
+
+            #gridmeps h1 {font-size:1rem}
+            #gridmeps h3 {margin:10px 0 20px 0; text-align:center; color: #eee}
+            #gridmeps {
+            width:1600px;height:900px;
+            background: linear-gradient(45deg, #3dae5c 0%, #0c6154 100%);;
+            }
+
+            #gridmeps .graph {
+            _background: pink;
+              width:1580px;height:800px;
+                column-count: 5; /* Number of columns */
+                column-gap: 10px; /* Gap between columns */
+            }
+
+            #gridmeps {
+            transform-origin: top left;
+            transform: scale(0.5);
+            _transform: scale(calc(100vw / 1600));
+            _zoom: calc(100vw / 1600);
+            }
+
+            .dc-grid-top .party {  display: flex;
+        align-items: center;
+        width: 100%; }
+
+            .party img, .party svg {flex: 0 0 auto; max-width:50px;}
+
+      .party span.img-rounded {}
+      .party span.text {
+        flex: 1 1 auto; /* Allow text to take up remaining space */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: center;
       }
 
-                        .stack .barLabel {
-                          display: none;
-                        }
-                        .rotated90 svg > g {
-                          transform: rotate(90deg);
-                          transform-origin: 50% 50%;
-                        }
+            #face {
+               width: 20px;
+               height: 25px;
+               padding-right: 10px;
+            }
+            #face img{
+             width: 100%;
 
-                        html .bg-info {
-                          background-image: linear-gradient(-20deg, #6e45e2 0%, #88d3ce 100%);
-                        }
+               border-radius: 25px;
+            }
+            .column-2 #face {width: 60px;height:70px}
+            .column-3 #face {width: 50px;height:50px}
+            .xcolumn-4 #face {width: 30px;height:40px}
+            .xcolumn-5 #face {width: 30px;height:40px}
+            .column-4 #face {display:none}
+            .column-5 #face {display:none}
+            .column-6 #face,.column-7 #face {display:none;}
 
-                        .wide-tip {
-                          min-width: 370px;
-                        }
-
-                        .wide-tip .icon {
-                          width: 1.2em;
-                          height: 1em;
-                        }
-
-                        .resetall button {
-                          padding: 5px 0;
-                          min-width: 3rem;
-                          font-size: 0.9em;
-                        }
-                        .glyphicon-sort:after {
-                          content: "⇅";
-                        }
-                        .glyphicon-arrow-up:after {
-                          content: "⤒";
-                        }
-                        .glyphicon-arrow-down:after {
-                          content: "⤓";
-                        }
-
-                        .flag-icon,
-                        .country-flag {
-                  font-family: "Twemoji Country Flags"!important;
-                          font-size: 1.4em!important;
-                        }
+            #name {width:100%; }
+            .column-7 #name {width: 180px;}
+            .column-6 #name {width: 220px;}
+            .column-5 #name {width: 260px;}
+            .column-4 #name {width: 320px;}
+            .column-3 #name {width: 420px;font-size:1.5em}
+            .column-2 #name {width: 420px;font-size:1.6em}
 
 
-
-                        img.face {
-                          width: 40px;
-                          height: 50px;
-                          border-radius: 25px;
-                          position: relative;
-                          margin-left: -10px;
-                          margin-right: 10px;
-                        }
-
-                        th .glyphicon {
-                          margin-left: 5px;
-                          color: black;
-                          font-size: 1.3em;
-                          border: 1px solid grey;
-                          text-align: center;
-                          width: 1.3em;
-                          border-radius: 2px;
-                          display: inline-block;
-                        }
-
-                        th#country,
-                        th#eugroup,
-                        th#col_0,
-                        th#col_1,
-                        th#twitter {
-                          min-width: 100px;
-                          padding-right: 0.75rem;
-                          padding-left: 0.75rem;
-                        }
-
-                        .icon,
-                        .eugroup {
-                          display: inline-block;
-                          width: 25px;
-                          height: 25px;
-                          text-indent: 100%;
-                          white-space: nowrap;
-                          overflow: hidden;
-                          background-size: cover;
-                          background-position: center;
-                        }
-
-            svg.icon-against use { color: #c0392b;}
-            svg.icon-abstention use { color: #2980b9;}
-            svg.icon-for use { color: #27ae60;}
-            svg.icon-attended use { color: #6699CC}
-            .pie-slice use {color: #fff}
-
-                        .patriots {
-                          background-image: url("img/eugroups/patriots.png");
-                        }
-                        .esn {
-                          background-image: url("img/eugroups/esn.png");
-                        }
-
-                        .ppe,
-                        .epp {
-                          background-image: url("img/eugroups/epp.png");
-                        }
-
-                        .s-d {
-                          background-image: url("img/eugroups/sd.png");
-                        }
-
-                        .renew {
-                          background-image: url("img/eugroups/renew.png");
-                        }
-
-                        .verts-ale,
-                        .greens-efa {
-                          background-image: url("img/eugroups/greensefa.png");
-                        }
+             .column-5 #position svg {width:20px}
+             .column-6 #position svg {width:20px}
+             #position svg {width:30px}
 
 
-                        .the-left, .gue-ngl {
-                          background-image: url("img/eugroups/leftgue.png");
-                        }
+            #gridmeps .graph {margin: 10px}
+            .dc-grid-top { box-shadow:0 0 4px 0 rgba(0,0,0,.14),0 3px 4px 0 rgba(0,0,0,.12),0 1px 5px 0 rgba(0,0,0,.2); padding: 10px 10px;
+            background-color:white;
+            margin-bottom: 10px;
+            break-inside: avoid;
+            }
 
+            .allow-break {
+            break-inside: auto;
+            }
 
-                        .ecr {
-                          background-image: url("img/eugroups/ecr.png");
-                        }
+            .dc-grid-item {
+            }
 
-                        .na,
-                        .ni,
-                        .na-ni {
-                          background-image: url("img/eugroups/ni.png");
-                        }
+            .dc-grid-item table{
+            width:100%;
+            }
+            .column-item {
+                break-inside: avoid; /* Prevent breaking inside the column */
+                height: 100%; /* Ensure it fits the column */
+                overflow: hidden; /* Hide overflowing content */
+              }
 
-      #gridmeps h1 {font-size:1rem}
-      #gridmeps h3 {margin:10px 0 20px 0; text-align:center; color: #eee}
-      #gridmeps {
-      width:1600px;height:900px;
-      background: linear-gradient(45deg, #3dae5c 0%, #0c6154 100%);;
-      }
-
-      #gridmeps .graph {
-      _background: pink;
-        width:1580px;height:800px;
-          column-count: 5; /* Number of columns */
-          column-gap: 10px; /* Gap between columns */
-      }
-
-      #gridmeps {
-      transform-origin: top left;
-      transform: scale(0.5);
-      _transform: scale(calc(100vw / 1600));
-      _zoom: calc(100vw / 1600);
-      }
-
-      .dc-grid-top .party {  display: flex;
-  align-items: center;
-  width: 100%; }
-
-      .party img, .party svg {flex: 0 0 auto; max-width:50px;}
-
-.party span.img-rounded {}
-.party span.text {
-  flex: 1 1 auto; /* Allow text to take up remaining space */
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  text-align: center;
-}
-
-      #face {
-         width: 20px;
-         height: 25px;
-         padding-right: 10px;
-      }
-      #face img{
-       width: 100%;
-
-         border-radius: 25px;
-      }
-      .column-2 #face {width: 60px;height:70px}
-      .column-3 #face {width: 50px;height:50px}
-      .xcolumn-4 #face {width: 30px;height:40px}
-      .xcolumn-5 #face {width: 30px;height:40px}
-      .column-4 #face {display:none}
-      .column-5 #face {display:none}
-      .column-6 #face,.column-7 #face {display:none;}
-
-      #name {width:100%; }
-      .column-7 #name {width: 180px;}
-      .column-6 #name {width: 220px;}
-      .column-5 #name {width: 260px;}
-      .column-4 #name {width: 320px;}
-      .column-3 #name {width: 420px;font-size:1.5em}
-      .column-2 #name {width: 420px;font-size:1.6em}
-
-
-       .column-5 #position svg {width:20px}
-       .column-6 #position svg {width:20px}
-       #position svg {width:30px}
-
-
-      #gridmeps .graph {margin: 10px}
-      .dc-grid-top { box-shadow:0 0 4px 0 rgba(0,0,0,.14),0 3px 4px 0 rgba(0,0,0,.12),0 1px 5px 0 rgba(0,0,0,.2); padding: 10px 10px;
-      background-color:white;
-      margin-bottom: 10px;
-      break-inside: avoid;
-      }
-
-      .allow-break {
-      break-inside: auto;
-      }
-
-      .dc-grid-item {
-      }
-
-      .dc-grid-item table{
-      width:100%;
-      }
-      .column-item {
-          break-inside: avoid; /* Prevent breaking inside the column */
-          height: 100%; /* Ensure it fits the column */
-          overflow: hidden; /* Hide overflowing content */
-        }
-
-        .truncate {
-          display: block;
-          white-space: nowrap; /* Prevent wrapping to the next line */
-          overflow: hidden; /* Hide overflowing text */
-          text-overflow: ellipsis; /* Add ellipsis (...) for truncated text */
-        }
+              .truncate {
+                display: block;
+                white-space: nowrap; /* Prevent wrapping to the next line */
+                overflow: hidden; /* Hide overflowing text */
+                text-overflow: ellipsis; /* Add ellipsis (...) for truncated text */
+              }
     </style>
   </head>
   <body>
@@ -467,10 +467,12 @@
 
             download(voteid, draw);
 
-            const getParty = (name, country) =>{
-              const party = parties.find (d => d.party === name && d.country===country);
+            const getParty = (name, country) => {
+              const party = parties.find(
+                (d) => d.party === name && d.country === country,
+              );
               return party;
-            }
+            };
 
             async function draw() {
               parties = await dl_parties();
@@ -504,7 +506,9 @@
               d3.select("input.title").property(
                 "value",
                 [config.name, config.title, config.description].join(" "),
-              );
+              ).on('input', function () {
+                 d3.select("h3").html(d3.select(this).property("value"));
+              });
               var percentColors = [
                 "#e3e3e3",
                 "#27ae60",
@@ -868,10 +872,10 @@
                 )
                 .colors(resultscolor)
                 /*      .colorCalculator(function(d, i) {
-                    return eu_groups[d.key];
-                    //return color(d.value.score/d.value.count);
-                  })
-                */
+                          return eu_groups[d.key];
+                          //return color(d.value.score/d.value.count);
+                        })
+                      */
                 .on("filtered", function (c) {
                   var mode =
                     graphs.result.filters().length == 1 ? "absolute" : "relative";
@@ -907,9 +911,9 @@
                     .attr("href", `#icon-${d.data.key}`);
                 });
                 /*            .call(tip)
-                        .on("mouseover.tip", tip.show)
-                        .on("mouseout.tip", tip.hide);
-            */
+                              .on("mouseover.tip", tip.show)
+                              .on("mouseout.tip", tip.hide);
+                  */
               });
               return graph;
             }
@@ -987,11 +991,11 @@
                 .on("renderlet", function (c) {
                   rotateBarChartLabels();
                   /*          if (!d3.select(dom +" .axis.x use").empty()) return;
-                      d3.select(dom + " .axis.x").selectAll(".tick")
-                        .append("use").attr( "href",function(d){
-                        return '#flag-'+d}).attr("width",24).attr("height",16)
-                        .attr("transform","translate(-10,2)");
-                      */
+                            d3.select(dom + " .axis.x").selectAll(".tick")
+                              .append("use").attr( "href",function(d){
+                              return '#flag-'+d}).attr("width",24).attr("height",16)
+                              .attr("transform","translate(-10,2)");
+                            */
                 });
 
               graph.on("pretransition", function (chart) {
@@ -1111,7 +1115,7 @@
                   left: 30,
                 })
                 .ordering(function (d) {
-      return -d.value.count;
+                  return -d.value.count;
                   if (config.goal && config.goal == "against")
                     return -d.value.against.count / d.value.count;
 
@@ -1170,17 +1174,17 @@
 
               toggleMode();
 
-       graph.filterHandler((dimension, filters) => {
-          // filters is an array of the currently selected values
-          if (filters.length > 0) {
-              // Keep only the most recently selected filter
-              dimension.filter(filters[filters.length - 1]);
-          } else {
-              dimension.filter(null);
-          }
-          country =  filters.slice(-1)[0];
-          return filters.slice(-1); // Return only the last filter
-      });
+              graph.filterHandler((dimension, filters) => {
+                // filters is an array of the currently selected values
+                if (filters.length > 0) {
+                  // Keep only the most recently selected filter
+                  dimension.filter(filters[filters.length - 1]);
+                } else {
+                  dimension.filter(null);
+                }
+                country = filters.slice(-1)[0];
+                return filters.slice(-1); // Return only the last filter
+              });
               return graph;
 
               function rotateBarChartLabels() {
@@ -1405,6 +1409,55 @@
               return chart;
             }
 
+            // Function to justify content vertically within columns
+            function justifyColumns() {
+function calculateColumnHeights() {
+                let previousLeft = null;
+                let column = -1;
+  const columnHeights = [];
+  const columnItems = [];
+  const containerRect = container.getBoundingClientRect();
+  const columnCount = parseFloat(getComputedStyle(container).columnCount);
+  const columnWidth = container.offsetWidth / columnCount;
+  boxes.forEach(item => {
+    const rects = Array.from(item.getClientRects());
+    rects.forEach(rect => {
+                  if (rect.left !== previousLeft) {
+                    column++;
+                    previousLeft = rect.left;
+                    columnItems[column] = [];
+                };
+      columnHeights[column] = (columnHeights[column] || 0) + rect.height;
+    });
+    columnItems[column].push (item);
+  });
+
+console.log(columnItems);
+  return [columnHeights,columnItems];
+}
+              const marginBottom = 10;
+              const container = document.querySelector("#gridmeps .graph");
+              const boxes = Array.from(container.children);
+              console.log("aa", container, boxes);
+              const columnCount = getComputedStyle(container).columnCount;
+              const containerHeight = container.offsetHeight;
+              // Wait for layout to settle
+              setTimeout(() => {
+       const [columnHeights, columns] = calculateColumnHeights();
+        const maxColumnHeight = Math.max(...columnHeights);
+
+        columns.forEach ((col,i) => {
+          const space = maxColumnHeight - columnHeights[i];
+          console.log(space, col.length, space / col.length);
+          col.forEach (box => {
+            if (space)
+              box.style.marginBottom = `${space -10}px`;     
+          })
+        });
+      console.log(maxColumnHeight,columnHeights);
+              }, 10);
+            }
+
             function drawGrid(dom) {
               const _columns = d3
                 .scaleLinear()
@@ -1441,13 +1494,20 @@
                 .html(tpl)
                 .htmlSection((d) => {
                   const [position, group, party] = d.key.split(",");
-                  const full = getParty (party,country);
+                  const full = getParty(party, country);
                   if (full) {
-                    return ( "<div class='party'>"+
-                     ( full.picture && "<img src='"+full.picture+"' title='"+full.party+"' />"
-                     )
-                      + "<span class='text'>" + (full.acronym || full.party) + "</span>" 
-                      +  "<span title='" +
+                    return (
+                      "<div class='party'>" +
+                      (full.picture &&
+                        "<img src='" +
+                          full.picture +
+                          "' title='" +
+                          full.party +
+                          "' />") +
+                      "<span class='text'>" +
+                      (full.acronym || full.party) +
+                      "</span>" +
+                      "<span title='" +
                       group +
                       "' class='img-rounded text-filter eugroup " +
                       group.replace(/&|\/| |car/g, "-").toLowerCase() +
@@ -1456,15 +1516,16 @@
                       "</span></div>"
                     );
                   }
-                    return (party +
-                      "<span title='" +
-                      group +
-                      "' class='img-rounded text-filter eugroup " +
-                      group.replace(/&|\/| |car/g, "-").toLowerCase() +
-                      "'>" +
-                      group +
-                      "</span>"
-                    );
+                  return (
+                    party +
+                    "<span title='" +
+                    group +
+                    "' class='img-rounded text-filter eugroup " +
+                    group.replace(/&|\/| |car/g, "-").toLowerCase() +
+                    "'>" +
+                    group +
+                    "</span>"
+                  );
                 })
                 .section(function (d) {
                   if (groupOrder.indexOf(d.eugroup) !== -1) {
@@ -1485,27 +1546,11 @@
 
                   const column = columns(items);
                   const grid = d3.select(chart.anchor());
-                  console.log(column, items);
 
                   d3.select(chart.anchor()).style("column-count", columns(items));
-                  [2,3, 4, 5, 6, 7].forEach((i) =>
+                  [2, 3, 4, 5, 6, 7].forEach((i) =>
                     grid.classed("column-" + i, i === column),
                   );
-                  const container = grid.node();
-                  // Get the computed styles of the container
-                  const styles = window.getComputedStyle(container);
-                  // Calculate the number of columns
-                  const columnWidth = parseFloat(styles.columnWidth); // The width of each column
-                  const gapWidth = parseFloat(styles.columnGap); // The gap between columns
-                  const containerWidth = container.clientWidth; // Total container width
-                  console.log(columnWidth, gapWidth, containerWidth);
-
-                  // Calculate the number of columns displayed
-                  const numColumns = Math.floor(
-                    (containerWidth + gapWidth) / (columnWidth + gapWidth),
-                  );
-
-                  console.log("Number of columns displayed:", numColumns);
                   d3.select(chart.anchor())
                     .selectAll(".dc-grid-top")
                     .each(function () {
@@ -1519,6 +1564,9 @@
                   //                  d3.selectAll(".dc-grid-item").attr("class", "grid mep");
                   //                  d3.selectAll(".dc-grid-top").attr("class", "row");
                 });
+              setTimeout(() => {
+                justifyColumns();
+              }, 10);
               return graph;
             }
 
