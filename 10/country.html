@@ -218,7 +218,6 @@
                width: 20px;
                height: 25px;
                padding-right: 10px;
-display: none;
             }
             #face img{
              width: 100%;
@@ -251,11 +250,11 @@ display: none;
             .dc-grid-top { box-shadow:0 0 4px 0 rgba(0,0,0,.14),0 3px 4px 0 rgba(0,0,0,.12),0 1px 5px 0 rgba(0,0,0,.2); padding: 10px 10px;
             background-color:white;
             margin-bottom: 10px;
-            break-inside: avoid;
+            break-inside: auto;
             }
 
-            .allow-break {
-            break-inside: auto;
+            .avoid-break {
+            break-inside: avoid;
             }
 
             .dc-grid-item {
@@ -476,7 +475,7 @@ inlineSVGRefs(element);
                   filter: (node) => {
 if (node.style?.display === 'none' || 
             node.style?.visibility === 'hidden' ||
-            node.hidden 
+            node.hidden ) {
           return false;
         }
                     // Exclude images that fail to load
@@ -1641,11 +1640,14 @@ console.log(img);
               .selectAll(".dc-grid-top")
               .each(function () {
                 const element = d3.select(this);
-                // TODO test to prevent cutting if offsetHeight close to bottom?
-                const height = element.node().getBoundingClientRect().height;
-                if (height > 150) {
-                  element.classed("allow-break", true);
+                //const height = element.node().getBoundingClientRect().height;
+                 const rects = Array.from(element.node().getClientRects());
+                if (rects.length > 1 && rects[0].height < 80) {
+                  element.classed("avoid-break", true);
                 }
+                //if (height <= 150) {
+                //  element.classed("avoid-break", true);
+                //}
               });
             //                  d3.selectAll(".dc-grid-item").attr("class", "grid mep");
             //                  d3.selectAll(".dc-grid-top").attr("class", "row");
