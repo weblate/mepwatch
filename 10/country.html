@@ -193,17 +193,15 @@
             }
 
             #gridmeps {
-            _ransform-origin: top left;
-            _transform: scale(0.5);
-            _transform: scale(calc(100vw / 1600));
-            _zoom: calc(100vw / 1600);
             }
 
             .dc-grid-top .party {  display: flex;
         align-items: center;
         width: 100%; }
 
-            .party img, .party svg {flex: 0 0 auto; max-width:50px;}
+            .party img, .party svg {flex: 0 0 auto; height:30px; max-width:50px;}
+
+       .party {break-after:avoid-column;}
 
       .party span.img-rounded {}
       .party span.text {
@@ -247,15 +245,38 @@
 
 
             #gridmeps .graph {margin: 10px}
-            .dc-grid-top { box-shadow:0 0 4px 0 rgba(0,0,0,.14),0 3px 4px 0 rgba(0,0,0,.12),0 1px 5px 0 rgba(0,0,0,.2); padding: 10px 10px;
+            .dc-grid-top { 
+            box-shadow:0 0 4px 0 rgba(0,0,0,.14),0 3px 4px 0 rgba(0,0,0,.12),0 1px 5px 0 rgba(0,0,0,.2); 
+            padding: 10px 10px;
             background-color:white;
             margin-bottom: 10px;
             break-inside: auto;
+_box-decoration-break: clone;
+-position: relative;
             }
+
 
             .avoid-break {
             break-inside: avoid;
             }
+.cgradient {
+}
+        .gradient {
+            position: absolute; /* Crucial for positioning within each rect */
+            width: 100%;
+            height: 10px;
+            pointer-events: none;
+        }
+        .gradient.bottom {
+            bottom: -9px;
+            height: 20px;
+            background-image: linear-gradient(to bottom,rgba(255,255,255,255), #2e975a);
+        }
+
+        .gradient.top {
+            top: -9px;
+            background-image: linear-gradient(to bottom, #1d7c57, rgba(255,255,255,255));
+        }
 
             .dc-grid-item {
             }
@@ -674,7 +695,6 @@ console.log(img);
         drawNumbers(graphs);
         graphs.result = drawResult("#result .graph");
         graphs.search = drawSearch("form#search .graph");
-        graphs.grid = drawGrid("#gridmeps .graph");
         var filter = urlParam("q");
         if (filter) {
           graphs.search.on("pretransition", function () {
@@ -704,6 +724,7 @@ console.log(img);
             })(filter.split("|"));
           }
         });
+        graphs.grid = drawGrid("#gridmeps .graph");
         dc.renderAll();
 
         //             graphs.table = drawTable("table.table");
@@ -1494,6 +1515,52 @@ console.log(img);
         return chart;
       }
 
+    function getOffset(el) { // Recursive function to get total offset
+console.log(el);
+return {left:el.x, top:el.y};
+    }
+
+    function addGradients() {
+        const container = document.querySelector("#gridmeps .graph");
+        const items = container.querySelectorAll('.dc-grid-top');
+        // Remove existing gradients
+        const existingGradients = container.querySelectorAll('.cgradient');
+        existingGradients.forEach(gradient => gradient.remove());
+    const scrollTop =
+      document.documentElement.scrollTop || document.body.scrollTop;
+    const scrollLeft =
+      document.documentElement.scrollLeft || document.body.scrollLeft;
+
+        items.forEach(item => {
+            const rects = Array.from(item.getClientRects());
+            if (rects.length > 1) {
+                rects.forEach((rect, index) => {
+//                    const offset = getOffset(rect);
+                    const gradientContainer = document.createElement('div');
+                    gradientContainer.classList.add('cgradient');
+                    gradientContainer.style.position = 'absolute';
+                    gradientContainer.style.left = `${rect.left + scrollLeft}px`;
+                    gradientContainer.style.top = `${rect.top + scrollTop}px`;
+                    gradientContainer.style.width = rect.width + 'px';
+                    gradientContainer.style.height = rect.height + 'px';
+                    item.appendChild(gradientContainer);
+
+                    if (index === 0) { // First rect: bottom gradient
+                        const bottomGradient = document.createElement('div');
+                        bottomGradient.classList.add('gradient', 'bottom');
+                        gradientContainer.appendChild(bottomGradient);
+                    }
+                    if (index === rects.length - 1) { // Last rect: top gradient
+                        const topGradient = document.createElement('div');
+                        topGradient.classList.add('gradient', 'top');
+console.log(gradientContainer);
+                        gradientContainer.appendChild(topGradient);
+                    }
+                });
+            }
+        });
+    }
+
       // Function to justify content vertically within columns
       function justifyColumns() {
         function calculateColumnHeights() {
@@ -1651,6 +1718,7 @@ console.log(img);
           });
         setTimeout(() => {
           //                justifyColumns();
+addGradients();
         }, 10);
         return graph;
       }
