@@ -1515,11 +1515,6 @@ console.log(img);
         return chart;
       }
 
-    function getOffset(el) { // Recursive function to get total offset
-console.log(el);
-return {left:el.x, top:el.y};
-    }
-
     function addGradients() {
         const container = document.querySelector("#gridmeps .graph");
         const items = container.querySelectorAll('.dc-grid-top');
@@ -1535,7 +1530,6 @@ return {left:el.x, top:el.y};
             const rects = Array.from(item.getClientRects());
             if (rects.length > 1) {
                 rects.forEach((rect, index) => {
-//                    const offset = getOffset(rect);
                     const gradientContainer = document.createElement('div');
                     gradientContainer.classList.add('cgradient');
                     gradientContainer.style.position = 'absolute';
@@ -1719,6 +1713,7 @@ console.log(gradientContainer);
 console.log("render");
         setTimeout(() => {
           //                justifyColumns();
+console.log("render timeout");
 addGradients();
         }, 10);
         return graph;

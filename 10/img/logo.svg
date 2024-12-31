@@ -170,18 +170,19 @@
       <circle cx="333.5" cy="14.8" r="3"/>
     </g>
 <g id="l" transform="translate(28, 10)">
-  <use href="#a" class="a" />
-  <use href="#a" class="b" transform="rotate(38 257 272)" />
-  <use href="#a" class="c" transform="rotate(-38 255 272)"/>
-  <use href="#a" class="d" transform="rotate(76 256 273)"/>
-  <use href="#a" class="e" transform="rotate(-76 256 273)"/>
+  <use href="#a" />
+  <use href="#a" transform="rotate(38 257 272)" />
+  <use href="#a" transform="rotate(-38 255 272)"/>
+  <use href="#a" transform="rotate(76 256 273)"/>
+  <use href="#a" transform="rotate(-76 256 273)"/>
 </g>
 <mask id="mask">
   <use href="#l" fill="white" />
 </mask>
   </defs>
 
-<use href="#l" fill="url(#myGradient)"/>
- <rect width="564" height="308" fill="url(#myGradient)" mask="url(#mask)" no-clip-path="url(#clip)" />
+ <rect width="564" height="308" fill="url(#myGradient)" mask="url(#mask)" />
+<circle cx="236.4" cy="283.3" fill="white" r="3.1" class="m"/>
+<circle cx="331.6" cy="283.3" fill="white" r="3.1" class="m"/>
 </svg>
 
