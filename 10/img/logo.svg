@@ -1,851 +1,187 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg
-   viewBox="0,0 512,351"
-   version="1.1"
-   id="svg2618"
-   sodipodi:docname="hemi.svg"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 571 308" height="100%" >
   <defs>
-  <g
- class="pulse-group" style="--circle-radius: 20"
-     id="slice">
-    <circle
-       id="s010"
-       cx="244.240"
-       cy="226.885"
-       r="3" />
-    <circle
-       id="s011"
-       cx="252.070"
-       cy="225.722"
-       r="3" />
-    <circle
-       id="s012"
-       cx="259.983"
-       cy="225.728"
-       r="3" />
-    <circle
-       id="s013"
-       cx="267.830"
-       cy="226.881"
-       r="3" />
-    <circle
-       id="s032"
-       cx="244.381"
-       cy="209.656"
-       r="3" />
-    <circle
-       id="s033"
-       cx="252.152"
-       cy="208.790"
-       r="3" />
-    <circle
-       id="s034"
-       cx="259.983"
-       cy="208.789"
-       r="3" />
-    <circle
-       id="s035"
-       cx="267.776"
-       cy="209.663"
-       r="3" />
-    <circle
-       id="s058"
-       cx="240.371"
-       cy="193.202"
-       r="3" />
-    <circle
-       id="s059"
-       cx="248.195"
-       cy="192.145"
-       r="3" />
-    <circle
-       id="s060"
-       cx="256.074"
-       cy="191.794"
-       r="3" />
-    <circle
-       id="s061"
-       cx="263.954"
-       cy="192.154"
-       r="3" />
-    <circle
-       id="s062"
-       cx="271.780"
-       cy="193.228"
-       r="3" />
-    <circle
-       id="s094"
-       cx="232.609"
-       cy="178.215"
-       r="3" />
-    <circle
-       id="s095"
-       cx="240.345"
-       cy="176.724"
-       r="3" />
-    <circle
-       id="s096"
-       cx="248.184"
-       cy="175.840"
-       r="3" />
-    <circle
-       id="s097"
-       cx="256.064"
-       cy="175.544"
-       r="3" />
-    <circle
-       id="s098"
-       cx="263.953"
-       cy="175.858"
-       r="3" />
-    <circle
-       id="s099"
-       cx="271.792"
-       cy="176.738"
-       r="3" />
-    <circle
-       id="s100"
-       cx="279.527"
-       cy="178.231"
-       r="3" />
-    <circle
-       id="s139"
-       cx="228.850"
-       cy="161.790"
-       r="3" />
-    <circle
-       id="s140"
-       cx="236.549"
-       cy="160.268"
-       r="3" />
-    <circle
-       id="s141"
-       cx="244.317"
-       cy="159.244"
-       r="3" />
-    <circle
-       id="s142"
-       cx="252.137"
-       cy="158.762"
-       r="3" />
-    <circle
-       id="s143"
-       cx="259.982"
-       cy="158.755"
-       r="3" />
-    <circle
-       id="s144"
-       cx="267.808"
-       cy="159.251"
-       r="3" />
-    <circle
-       id="s145"
-       cx="275.590"
-       cy="160.259"
-       r="3" />
-    <circle
-       id="s146"
-       cx="283.269"
-       cy="161.790"
-       r="3" />
-    <circle
-       id="s191"
-       cx="224.910"
-       cy="145.400"
-       r="3" />
-    <circle
-       id="s192"
-       cx="232.618"
-       cy="143.833"
-       r="3" />
-    <circle
-       id="s193"
-       cx="240.406"
-       cy="142.718"
-       r="3" />
-    <circle
-       id="s194"
-       cx="248.255"
-       cy="142.067"
-       r="3" />
-    <circle
-       id="s195"
-       cx="256.135"
-       cy="141.860"
-       r="3" />
-    <circle
-       id="s196"
-       cx="263.999"
-       cy="142.093"
-       r="3" />
-    <circle
-       id="s197"
-       cx="271.845"
-       cy="142.756"
-       r="3" />
-    <circle
-       id="s198"
-       cx="279.642"
-       cy="143.877"
-       r="3" />
-    <circle
-       id="s199"
-       cx="287.365"
-       cy="145.447"
-       r="3" />
-    <circle
-       id="s253"
-       cx="217.156"
-       cy="129.467"
-       r="3" />
-    <circle
-       id="s254"
-       cx="224.814"
-       cy="127.682"
-       r="3" />
-    <circle
-       id="s255"
-       cx="232.570"
-       cy="126.305"
-       r="3" />
-    <circle
-       id="s256"
-       cx="240.366"
-       cy="125.314"
-       r="3" />
-    <circle
-       id="s257"
-       cx="248.209"
-       cy="124.715"
-       r="3" />
-    <circle
-       id="s258"
-       cx="256.076"
-       cy="124.529"
-       r="3" />
-    <circle
-       id="s259"
-       cx="263.940"
-       cy="124.733"
-       r="3" />
-    <circle
-       id="s260"
-       cx="271.783"
-       cy="125.326"
-       r="3" />
-    <circle
-       id="s261"
-       cx="279.598"
-       cy="126.313"
-       r="3" />
-    <circle
-       id="s262"
-       cx="287.342"
-       cy="127.710"
-       r="3" />
-    <circle
-       id="s263"
-       cx="294.996"
-       cy="129.490"
-       r="3" />
-    <circle
-       id="s325"
-       cx="213.363"
-       cy="112.792"
-       r="3" />
-    <circle
-       id="s326"
-       cx="221.009"
-       cy="111.019"
-       r="3" />
-    <circle
-       id="s327"
-       cx="228.717"
-       cy="109.592"
-       r="3" />
-    <circle
-       id="s328"
-       cx="236.498"
-       cy="108.543"
-       r="3" />
-    <circle
-       id="s329"
-       cx="244.298"
-       cy="107.844"
-       r="3" />
-    <circle
-       id="s330"
-       cx="252.135"
-       cy="107.495"
-       r="3" />
-    <circle
-       id="s331"
-       cx="259.982"
-       cy="107.503"
-       r="3" />
-    <circle
-       id="s332"
-       cx="267.820"
-       cy="107.855"
-       r="3" />
-    <circle
-       id="s333"
-       cx="275.645"
-       cy="108.537"
-       r="3" />
-    <circle
-       id="s334"
-       cx="283.410"
-       cy="109.599"
-       r="3" />
-    <circle
-       id="s335"
-       cx="291.135"
-       cy="111.010"
-       r="3" />
-    <circle
-       id="s336"
-       cx="298.767"
-       cy="112.788"
-       r="3" />
-    <circle
-       id="s402"
-       cx="205.781"
-       cy="097.138"
-       r="3" />
-    <circle
-       id="s403"
-       cx="213.366"
-       cy="095.219"
-       r="3" />
-    <circle
-       id="s404"
-       cx="221.023"
-       cy="093.602"
-       r="3" />
-    <circle
-       id="s405"
-       cx="228.749"
-       cy="092.302"
-       r="3" />
-    <circle
-       id="s406"
-       cx="236.519"
-       cy="091.322"
-       r="3" />
-    <circle
-       id="s407"
-       cx="244.331"
-       cy="090.701"
-       r="3" />
-    <circle
-       id="s408"
-       cx="252.158"
-       cy="090.404"
-       r="3" />
-    <circle
-       id="s409"
-       cx="259.989"
-       cy="090.404"
-       r="3" />
-    <circle
-       id="s410"
-       cx="267.813"
-       cy="090.701"
-       r="3" />
-    <circle
-       id="s411"
-       cx="275.614"
-       cy="091.319"
-       r="3" />
-    <circle
-       id="s412"
-       cx="283.369"
-       cy="092.294"
-       r="3" />
-    <circle
-       id="s413"
-       cx="291.099"
-       cy="093.603"
-       r="3" />
-    <circle
-       id="s414"
-       cx="298.769"
-       cy="095.220"
-       r="3" />
-    <circle
-       id="s415"
-       cx="306.362"
-       cy="097.138"
-       r="3" />
-    <circle
-       id="s483"
-       cx="201.848"
-       cy="080.477"
-       r="3" />
-    <circle
-       id="s484"
-       cx="209.494"
-       cy="078.567"
-       r="3" />
-    <circle
-       id="s485"
-       cx="217.164"
-       cy="076.965"
-       r="3" />
-    <circle
-       id="s486"
-       cx="224.903"
-       cy="075.636"
-       r="3" />
-    <circle
-       id="s487"
-       cx="232.694"
-       cy="074.579"
-       r="3" />
-    <circle
-       id="s488"
-       cx="240.551"
-       cy="073.831"
-       r="3" />
-    <circle
-       id="s489"
-       cx="248.393"
-       cy="073.436"
-       r="3" />
-    <circle
-       id="s490"
-       cx="256.249"
-       cy="073.287"
-       r="3" />
-    <circle
-       id="s491"
-       cx="264.114"
-       cy="073.410"
-       r="3" />
-    <circle
-       id="s492"
-       cx="271.957"
-       cy="073.863"
-       r="3" />
-    <circle
-       id="s493"
-       cx="279.790"
-       cy="074.635"
-       r="3" />
-    <circle
-       id="s494"
-       cx="287.597"
-       cy="075.692"
-       r="3" />
-    <circle
-       id="s495"
-       cx="295.330"
-       cy="077.008"
-       r="3" />
-    <circle
-       id="s496"
-       cx="303.005"
-       cy="078.643"
-       r="3" />
-    <circle
-       id="s497"
-       cx="310.632"
-       cy="080.617"
-       r="3" />
-    <circle
-       id="s567"
-       cx="198.153"
-       cy="064.224"
-       r="3" />
-    <circle
-       id="s568"
-       cx="205.755"
-       cy="062.325"
-       r="3" />
-    <circle
-       id="s569"
-       cx="213.412"
-       cy="060.706"
-       r="3" />
-    <circle
-       id="s570"
-       cx="221.113"
-       cy="059.359"
-       r="3" />
-    <circle
-       id="s571"
-       cx="228.858"
-       cy="058.268"
-       r="3" />
-    <circle
-       id="s572"
-       cx="236.645"
-       cy="057.457"
-       r="3" />
-    <circle
-       id="s573"
-       cx="244.453"
-       cy="056.908"
-       r="3" />
-    <circle
-       id="s574"
-       cx="252.282"
-       cy="056.630"
-       r="3" />
-    <circle
-       id="s575"
-       cx="260.113"
-       cy="056.659"
-       r="3" />
-    <circle
-       id="s576"
-       cx="267.933"
-       cy="056.954"
-       r="3" />
-    <circle
-       id="s577"
-       cx="275.739"
-       cy="057.457"
-       r="3" />
-    <circle
-       id="s578"
-       cx="283.514"
-       cy="058.282"
-       r="3" />
-    <circle
-       id="s579"
-       cx="291.268"
-       cy="059.409"
-       r="3" />
-    <circle
-       id="s580"
-       cx="298.983"
-       cy="060.758"
-       r="3" />
-    <circle
-       id="s581"
-       cx="306.619"
-       cy="062.374"
-       r="3" />
-    <circle
-       id="s582"
-       cx="314.201"
-       cy="064.316"
-       r="3" />
-    <circle
-       id="s653"
-       cx="190.319"
-       cy="047.499"
-       r="3" />
-    <circle
-       id="s654"
-       cx="197.874"
-       cy="045.439"
-       r="3" />
-    <circle
-       id="s655"
-       cx="205.534"
-       cy="043.684"
-       r="3" />
-    <circle
-       id="s656"
-       cx="213.201"
-       cy="042.194"
-       r="3" />
-    <circle
-       id="s657"
-       cx="220.929"
-       cy="040.890"
-       r="3" />
-    <circle
-       id="s658"
-       cx="228.708"
-       cy="039.898"
-       r="3" />
-    <circle
-       id="s659"
-       cx="236.489"
-       cy="039.151"
-       r="3" />
-    <circle
-       id="s660"
-       cx="244.312"
-       cy="038.592"
-       r="3" />
-    <circle
-       id="s661"
-       cx="252.145"
-       cy="038.393"
-       r="3" />
-    <circle
-       id="s662"
-       cx="259.982"
-       cy="038.393"
-       r="3" />
-    <circle
-       id="s663"
-       cx="267.806"
-       cy="038.595"
-       r="3" />
-    <circle
-       id="s664"
-       cx="275.618"
-       cy="039.158"
-       r="3" />
-    <circle
-       id="s665"
-       cx="283.433"
-       cy="039.901"
-       r="3" />
-    <circle
-       id="s666"
-       cx="291.177"
-       cy="040.881"
-       r="3" />
-    <circle
-       id="s667"
-       cx="298.920"
-       cy="042.186"
-       r="3" />
-    <circle
-       id="s668"
-       cx="306.622"
-       cy="043.682"
-       r="3" />
-    <circle
-       id="s669"
-       cx="314.220"
-       cy="045.447"
-       r="3" />
-    <circle
-       id="s670"
-       cx="321.806"
-       cy="047.499"
-       r="3" />
-    <circle
-       id="s738"
-       cx="186.504"
-       cy="030.712"
-       r="3" />
-    <circle
-       id="s739"
-       cx="194.041"
-       cy="028.675"
-       r="3" />
-    <circle
-       id="s740"
-       cx="201.712"
-       cy="026.921"
-       r="3" />
-    <circle
-       id="s741"
-       cx="209.359"
-       cy="025.413"
-       r="3" />
-    <circle
-       id="s742"
-       cx="217.089"
-       cy="024.056"
-       r="3" />
-    <circle
-       id="s743"
-       cx="224.842"
-       cy="023.058"
-       r="3" />
-    <circle
-       id="s744"
-       cx="232.613"
-       cy="022.212"
-       r="3" />
-    <circle
-       id="s745"
-       cx="240.428"
-       cy="021.623"
-       r="3" />
-    <circle
-       id="s746"
-       cx="248.240"
-       cy="021.301"
-       r="3" />
-    <circle
-       id="s747"
-       cx="256.063"
-       cy="021.105"
-       r="3" />
-    <circle
-       id="s748"
-       cx="263.892"
-       cy="021.301"
-       r="3" />
-    <circle
-       id="s749"
-       cx="271.719"
-       cy="021.623"
-       r="3" />
-    <circle
-       id="s750"
-       cx="279.511"
-       cy="022.214"
-       r="3" />
-    <circle
-       id="s751"
-       cx="287.298"
-       cy="023.058"
-       r="3" />
-    <circle
-       id="s752"
-       cx="295.049"
-       cy="024.056"
-       r="3" />
-    <circle
-       id="s753"
-       cx="302.761"
-       cy="025.412"
-       r="3" />
-    <circle
-       id="s754"
-       cx="310.459"
-       cy="026.919"
-       r="3" />
-    <circle
-       id="s755"
-       cx="318.041"
-       cy="028.677"
-       r="3" />
-    <circle
-       id="s756"
-       cx="325.633"
-       cy="030.711"
-       r="3" />
-    <circle
-       id="s816"
-       cx="178.996"
-       cy="014.630"
-       r="3" />
-    <circle
-       id="s817"
-       cx="186.556"
-       cy="012.589"
-       r="3" />
-    <circle
-       id="s818"
-       cx="194.123"
-       cy="010.701"
-       r="3" />
-    <circle
-       id="s819"
-       cx="201.812"
-       cy="009.052"
-       r="3" />
-    <circle
-       id="s820"
-       cx="209.476"
-       cy="007.636"
-       r="3" />
-    <circle
-       id="s821"
-       cx="217.238"
-       cy="006.376"
-       r="3" />
-    <circle
-       id="s822"
-       cx="224.986"
-       cy="005.449"
-       r="3" />
-    <circle
-       id="s823"
-       cx="232.775"
-       cy="004.615"
-       r="3" />
-    <circle
-       id="s824"
-       cx="240.587"
-       cy="004.137"
-       r="3" />
-    <circle
-       id="s825"
-       cx="248.408"
-       cy="003.780"
-       r="3" />
-    <circle
-       id="s826"
-       cx="256.231"
-       cy="003.700"
-       r="3" />
-    <circle
-       id="s827"
-       cx="264.062"
-       cy="003.817"
-       r="3" />
-    <circle
-       id="s828"
-       cx="271.876"
-       cy="004.133"
-       r="3" />
-    <circle
-       id="s829"
-       cx="279.691"
-       cy="004.720"
-       r="3" />
-    <circle
-       id="s830"
-       cx="287.467"
-       cy="005.429"
-       r="3" />
-    <circle
-       id="s831"
-       cx="295.239"
-       cy="006.491"
-       r="3" />
-    <circle
-       id="s832"
-       cx="302.986"
-       cy="007.659"
-       r="3" />
-    <circle
-       id="s833"
-       cx="310.654"
-       cy="009.141"
-       r="3" />
-    <circle
-       id="s834"
-       cx="318.330"
-       cy="010.777"
-       r="3" />
-    <circle
-       id="s835"
-       cx="325.888"
-       cy="012.654"
-       r="3" />
-    <circle
-       id="s836"
-       cx="333.461"
-       cy="014.775"
-       r="3" />
-  </g>
-</defs>
+    <linearGradient id="myGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="cyan" />
+      <stop offset="100%" stop-color="purple" />
+    </linearGradient>
+    <g id="a"  r="20">
+      <circle cx="244.2" cy="226.9" r="3"/>
+      <circle cx="252.1" cy="225.7" r="3"/>
+      <circle cx="260" cy="225.7" r="3"/>
+      <circle cx="267.8" cy="226.9" r="3"/>
+      <circle cx="244.4" cy="209.7" r="3"/>
+      <circle cx="252.2" cy="208.8" r="3"/>
+      <circle cx="260" cy="208.8" r="3"/>
+      <circle cx="267.8" cy="209.7" r="3"/>
+      <circle cx="240.4" cy="193.2" r="3"/>
+      <circle cx="248.2" cy="192.1" r="3"/>
+      <circle cx="256.1" cy="191.8" r="3"/>
+      <circle cx="264" cy="192.2" r="3"/>
+      <circle cx="271.8" cy="193.2" r="3"/>
+      <circle cx="232.6" cy="178.2" r="3"/>
+      <circle cx="240.3" cy="176.7" r="3"/>
+      <circle cx="248.2" cy="175.8" r="3"/>
+      <circle cx="256.1" cy="175.5" r="3"/>
+      <circle cx="264" cy="175.9" r="3"/>
+      <circle cx="271.8" cy="176.7" r="3"/>
+      <circle cx="279.5" cy="178.2" r="3"/>
+      <circle cx="228.8" cy="161.8" r="3"/>
+      <circle cx="236.5" cy="160.3" r="3"/>
+      <circle cx="244.3" cy="159.2" r="3"/>
+      <circle cx="252.1" cy="158.8" r="3"/>
+      <circle cx="260" cy="158.8" r="3"/>
+      <circle cx="267.8" cy="159.3" r="3"/>
+      <circle cx="275.6" cy="160.3" r="3"/>
+      <circle cx="283.3" cy="161.8" r="3"/>
+      <circle cx="224.9" cy="145.4" r="3"/>
+      <circle cx="232.6" cy="143.8" r="3"/>
+      <circle cx="240.4" cy="142.7" r="3"/>
+      <circle cx="248.3" cy="142.1" r="3"/>
+      <circle cx="256.1" cy="141.9" r="3"/>
+      <circle cx="264" cy="142.1" r="3"/>
+      <circle cx="271.8" cy="142.8" r="3"/>
+      <circle cx="279.6" cy="143.9" r="3"/>
+      <circle cx="287.4" cy="145.4" r="3"/>
+      <circle cx="217.2" cy="129.5" r="3"/>
+      <circle cx="224.8" cy="127.7" r="3"/>
+      <circle cx="232.6" cy="126.3" r="3"/>
+      <circle cx="240.4" cy="125.3" r="3"/>
+      <circle cx="248.2" cy="124.7" r="3"/>
+      <circle cx="256.1" cy="124.5" r="3"/>
+      <circle cx="263.9" cy="124.7" r="3"/>
+      <circle cx="271.8" cy="125.3" r="3"/>
+      <circle cx="279.6" cy="126.3" r="3"/>
+      <circle cx="287.3" cy="127.7" r="3"/>
+      <circle cx="295" cy="129.5" r="3"/>
+      <circle cx="213.4" cy="112.8" r="3"/>
+      <circle cx="221" cy="111" r="3"/>
+      <circle cx="228.7" cy="109.6" r="3"/>
+      <circle cx="236.5" cy="108.5" r="3"/>
+      <circle cx="244.3" cy="107.8" r="3"/>
+      <circle cx="252.1" cy="107.5" r="3"/>
+      <circle cx="260" cy="107.5" r="3"/>
+      <circle cx="267.8" cy="107.9" r="3"/>
+      <circle cx="275.6" cy="108.5" r="3"/>
+      <circle cx="283.4" cy="109.6" r="3"/>
+      <circle cx="291.1" cy="111" r="3"/>
+      <circle cx="298.8" cy="112.8" r="3"/>
+      <circle cx="205.8" cy="97.1" r="3"/>
+      <circle cx="213.4" cy="95.2" r="3"/>
+      <circle cx="221" cy="93.6" r="3"/>
+      <circle cx="228.7" cy="92.3" r="3"/>
+      <circle cx="236.5" cy="91.3" r="3"/>
+      <circle cx="244.3" cy="90.7" r="3"/>
+      <circle cx="252.2" cy="90.4" r="3"/>
+      <circle cx="260" cy="90.4" r="3"/>
+      <circle cx="267.8" cy="90.7" r="3"/>
+      <circle cx="275.6" cy="91.3" r="3"/>
+      <circle cx="283.4" cy="92.3" r="3"/>
+      <circle cx="291.1" cy="93.6" r="3"/>
+      <circle cx="298.8" cy="95.2" r="3"/>
+      <circle cx="306.4" cy="97.1" r="3"/>
+      <circle cx="201.8" cy="80.5" r="3"/>
+      <circle cx="209.5" cy="78.6" r="3"/>
+      <circle cx="217.2" cy="77" r="3"/>
+      <circle cx="224.9" cy="75.6" r="3"/>
+      <circle cx="232.7" cy="74.6" r="3"/>
+      <circle cx="240.6" cy="73.8" r="3"/>
+      <circle cx="248.4" cy="73.4" r="3"/>
+      <circle cx="256.2" cy="73.3" r="3"/>
+      <circle cx="264.1" cy="73.4" r="3"/>
+      <circle cx="272" cy="73.9" r="3"/>
+      <circle cx="279.8" cy="74.6" r="3"/>
+      <circle cx="287.6" cy="75.7" r="3"/>
+      <circle cx="295.3" cy="77" r="3"/>
+      <circle cx="303" cy="78.6" r="3"/>
+      <circle cx="310.6" cy="80.6" r="3"/>
+      <circle cx="198.2" cy="64.2" r="3"/>
+      <circle cx="205.8" cy="62.3" r="3"/>
+      <circle cx="213.4" cy="60.7" r="3"/>
+      <circle cx="221.1" cy="59.4" r="3"/>
+      <circle cx="228.9" cy="58.3" r="3"/>
+      <circle cx="236.6" cy="57.5" r="3"/>
+      <circle cx="244.5" cy="56.9" r="3"/>
+      <circle cx="252.3" cy="56.6" r="3"/>
+      <circle cx="260.1" cy="56.7" r="3"/>
+      <circle cx="267.9" cy="57" r="3"/>
+      <circle cx="275.7" cy="57.5" r="3"/>
+      <circle cx="283.5" cy="58.3" r="3"/>
+      <circle cx="291.3" cy="59.4" r="3"/>
+      <circle cx="299" cy="60.8" r="3"/>
+      <circle cx="306.6" cy="62.4" r="3"/>
+      <circle cx="314.2" cy="64.3" r="3"/>
+      <circle cx="190.3" cy="47.5" r="3"/>
+      <circle cx="197.9" cy="45.4" r="3"/>
+      <circle cx="205.5" cy="43.7" r="3"/>
+      <circle cx="213.2" cy="42.2" r="3"/>
+      <circle cx="220.9" cy="40.9" r="3"/>
+      <circle cx="228.7" cy="39.9" r="3"/>
+      <circle cx="236.5" cy="39.2" r="3"/>
+      <circle cx="244.3" cy="38.6" r="3"/>
+      <circle cx="252.1" cy="38.4" r="3"/>
+      <circle cx="260" cy="38.4" r="3"/>
+      <circle cx="267.8" cy="38.6" r="3"/>
+      <circle cx="275.6" cy="39.2" r="3"/>
+      <circle cx="283.4" cy="39.9" r="3"/>
+      <circle cx="291.2" cy="40.9" r="3"/>
+      <circle cx="298.9" cy="42.2" r="3"/>
+      <circle cx="306.6" cy="43.7" r="3"/>
+      <circle cx="314.2" cy="45.4" r="3"/>
+      <circle cx="321.8" cy="47.5" r="3"/>
+      <circle cx="186.5" cy="30.7" r="3"/>
+      <circle cx="194" cy="28.7" r="3"/>
+      <circle cx="201.7" cy="26.9" r="3"/>
+      <circle cx="209.4" cy="25.4" r="3"/>
+      <circle cx="217.1" cy="24.1" r="3"/>
+      <circle cx="224.8" cy="23.1" r="3"/>
+      <circle cx="232.6" cy="22.2" r="3"/>
+      <circle cx="240.4" cy="21.6" r="3"/>
+      <circle cx="248.2" cy="21.3" r="3"/>
+      <circle cx="256.1" cy="21.1" r="3"/>
+      <circle cx="263.9" cy="21.3" r="3"/>
+      <circle cx="271.7" cy="21.6" r="3"/>
+      <circle cx="279.5" cy="22.2" r="3"/>
+      <circle cx="287.3" cy="23.1" r="3"/>
+      <circle cx="295" cy="24.1" r="3"/>
+      <circle cx="302.8" cy="25.4" r="3"/>
+      <circle cx="310.5" cy="26.9" r="3"/>
+      <circle cx="318" cy="28.7" r="3"/>
+      <circle cx="325.6" cy="30.7" r="3"/>
+      <circle cx="179" cy="14.6" r="3"/>
+      <circle cx="186.6" cy="12.6" r="3"/>
+      <circle cx="194.1" cy="10.7" r="3"/>
+      <circle cx="201.8" cy="9.1" r="3"/>
+      <circle cx="209.5" cy="7.6" r="3"/>
+      <circle cx="217.2" cy="6.4" r="3"/>
+      <circle cx="225" cy="5.4" r="3"/>
+      <circle cx="232.8" cy="4.6" r="3"/>
+      <circle cx="240.6" cy="4.1" r="3"/>
+      <circle cx="248.4" cy="3.8" r="3"/>
+      <circle cx="256.2" cy="3.7" r="3"/>
+      <circle cx="264.1" cy="3.8" r="3"/>
+      <circle cx="271.9" cy="4.1" r="3"/>
+      <circle cx="279.7" cy="4.7" r="3"/>
+      <circle cx="287.5" cy="5.4" r="3"/>
+      <circle cx="295.2" cy="6.5" r="3"/>
+      <circle cx="303" cy="7.7" r="3"/>
+      <circle cx="310.7" cy="9.1" r="3"/>
+      <circle cx="318.3" cy="10.8" r="3"/>
+      <circle cx="325.9" cy="12.7" r="3"/>
+      <circle cx="333.5" cy="14.8" r="3"/>
+    </g>
+<g id="l" transform="translate(28, 10)">
+  <use href="#a" class="a" />
+  <use href="#a" class="b" transform="rotate(38 257 272)" />
+  <use href="#a" class="c" transform="rotate(-38 255 272)"/>
+  <use href="#a" class="d" transform="rotate(76 256 273)"/>
+  <use href="#a" class="e" transform="rotate(-76 256 273)"/>
+</g>
+<mask id="mask">
+  <use href="#l" fill="white" />
+</mask>
+  </defs>
 
-<use href="#slice"/>
-  
-  <use href="#slice" 
-       transform="translate(10, 3) rotate(38, 256, 256)"
-/>
-
-  <use href="#slice" 
-       transform="translate(-10, 3) rotate(-38, 256, 256)"
-/>
-  
-  <use href="#slice" 
-       transform="translate(16, 13) rotate(76, 256, 256)"
-/>
-
-  <use href="#slice" 
-       transform="translate(-16, 13) rotate(-76, 256, 256)"
-/>
+<use href="#l" fill="url(#myGradient)"/>
+ <rect width="564" height="308" fill="url(#myGradient)" mask="url(#mask)" no-clip-path="url(#clip)" />
 </svg>
+

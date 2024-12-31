@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<object id="logo" type="image/svg+xml" data="logo.svg" height="200"></object>
+<style>
+  /* Animate the radius of Circle 2 */
+  g circle {
+    animation: radiusAnimation 2s infinite alternate;
+  }
+
+  /* Define the CSS animation */
+  @keyframes radiusAnimation {
+    0% {
+      r: 1px;
+    }
+    80% {
+      r: 9px;
+    }
+    100% {
+      r: 10px;
+    }
+  }
+
+  /* Optionally animate other circles with different timings */
+  .b circle  {
+    animation: radiusAnimation 3s infinite alternate;
+  }
+</style>
+<script>
+  document.getElementById('logo').addEventListener('load', function() {
+    // Access the SVG document inside the <object> element
+    const svgDoc = this.contentDocument;
+    
+    // Select the circle element
+    const circles = svgDoc.querySelectorAll('circle');
+      function animateCircles() {
+      circles.forEach((circle, index) => {
+        let radius = 3;
+        let targetRadius = 6;
+        
+        // Change radius between 40 and 10 (simple toggle animation)
+        setInterval(function() {
+          radius = (radius === 3) ? targetRadius : radius;
+          circle.setAttribute('r', radius);
+        }, 50 + (index * 20)); // Staggered intervals based on index
+      });
+    }
+
+    // Start the animation after the SVG is loaded
+    //animateCircles(); 
+  });
+</script>
+
+<div id="svgLogo"></div>
+<script>
+  // Function to load SVG as inline HTML
+  function loadSVG(url, containerId) {
+    fetch(url)
+      .then(response => response.text())
+      .then(data => {
+        // Inject the SVG content into the container
+        const container = document.getElementById(containerId);
+        container.innerHTML = data;
+      });
+  }
+
+  // Load the SVG
+  loadSVG('./logo.svg', 'svgLogo');
+</script>
+</html>
