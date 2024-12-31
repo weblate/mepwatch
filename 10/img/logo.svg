@@ -9,13 +9,9 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
-    <circle
-       id="s010"
-       cx="256"
-       cy="256"
-       r="256" fill="pink"/>
   <defs>
   <g
+ class="pulse-group" style="--circle-radius: 20"
      id="slice">
     <circle
        id="s010"
@@ -839,17 +835,17 @@
   
   <use href="#slice" 
        transform="translate(10, 3) rotate(38, 256, 256)"
-       fill="green"/>
+/>
 
   <use href="#slice" 
        transform="translate(-10, 3) rotate(-38, 256, 256)"
-       fill="red"/>
+/>
   
   <use href="#slice" 
        transform="translate(16, 13) rotate(76, 256, 256)"
-       fill="blue"/>
+/>
 
   <use href="#slice" 
        transform="translate(-16, 13) rotate(-76, 256, 256)"
-       fill="blue"/>
+/>
 </svg>
