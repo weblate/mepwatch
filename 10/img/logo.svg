@@ -180,6 +180,12 @@
   <use href="#l" fill="white" />
 </mask>
   </defs>
+<svg viewBox="-13 0 540 272" xmlns="http://www.w3.org/2000/svg">
+  <path 
+    d="M 0 272 A 270 390 0 0 1 513 272 L 260 253" 
+    fill="rgba (255,255,255,0.7)" 
+    stroke="none"/>
+</svg>
 
  <rect width="564" height="308" fill="url(#myGradient)" mask="url(#mask)" />
 <circle cx="236.4" cy="283.3" fill="white" r="3.1" class="m"/>
