@@ -182,8 +182,8 @@
   </defs>
 <svg viewBox="-13 0 540 272" xmlns="http://www.w3.org/2000/svg">
   <path 
-    d="M 0 272 A 270 390 0 0 1 513 272 L 260 253" 
-    fill="rgba (255,255,255,0.7)" 
+    d="M 0 272 Q 10 15 258 0 Q 501 20 512 272 L 260 253" 
+    fill="rgba(255,255,255,0.7)" 
     stroke="none"/>
 </svg>
 
