@@ -3,16 +3,16 @@
   <style>
     /* Animate the radius of Circle 2 */
 
-    svg:hover circle {
+    svg:hover path {
       stroke-width:4px;
 
     }
-    circle {
+    path {
       _animation: radiusAnimation 1s ease-in 2 alternate;
       stroke-width:2px;
       transition: stroke-width 1s;
     }
-    svg circle:hover {
+    svg path:hover {
  transition: stroke-width 1s ease-out;
       stroke-width:10px;
     }

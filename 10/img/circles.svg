@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 571 308" height="100%" >
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 110" >
   <defs>
     <linearGradient id="myGradient" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="cyan" />
@@ -14,7 +14,7 @@
     stroke="none"/>
 
 
-  <g class="lo" transform="translate(284,283) scale(2.7,2.7)" fill="none" stroke-width="2.5" stroke="url(#myGradient)" filter="url(#blur-filter)">
+  <g class="lo" transform="translate(110,110)" stransform="translate(284,283) scale(2.7,2.7)" fill="none" stroke-width="2.5" stroke="url(#myGradient)" filter="url(#blur-filter)">
 <circle r="100" /> 
 <circle r="93.75" /> 
 <circle r="87.5" /> 

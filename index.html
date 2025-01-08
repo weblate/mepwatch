@@ -37,7 +37,25 @@
       <div class="navbar navbar-dark bg-primary box-shadow">
         <div class="container d-flex justify-content-between">
           <a href="#" class="navbar-brand d-flex align-items-center">
-            <svg><use href="#logo" /></svg>MEP Watch
+  <div id="svglogo">
+    <object type="image/svg+xml" data="./10/img/logo.svg" height="200"></object>
+  </div>
+  <script>
+    function loadSVG(url, containerId) {
+      fetch(url)
+        .then((response) => response.text())
+        .then((data) => {
+          // Inject the SVG content into the container
+          const container = document.getElementById(containerId);
+          container.innerHTML = data;
+        });
+    }
+
+    // Load the SVG
+    loadSVG("./10/img/logo.svg", "svglogo");
+  </script>
+
+MEP Watch
           </a>
 
           <button
@@ -222,5 +240,28 @@ We have the data, we want to better work with CSOs to show what is happening in 
         />
       </symbol>
     </svg>
+  <style>
+    #svglogo {position:relative; height:40px; margin-right: 10px;}
+    #svglogo svg {width:auto;}
+    #svglogo path, #svglogo line {fill:purple} 
+    circle {
+      stroke-width: 2px;
+    }
+    circle:hover {
+      animation: radiusAnimation 1s ease-in 2 alternate;
+      transition: all 1s;
+      stroke-width: 6px;
+    }
+
+    /* Define the CSS animation */
+    @keyframes radiusAnimation {
+      0% {
+        stroke-width: 1px;
+      }
+      100% {
+        stroke-width: 5px;
+      }
+    }
+  </style>
   </body>
 </html>
