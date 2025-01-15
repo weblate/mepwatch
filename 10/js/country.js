@@ -26,61 +26,64 @@ const inlineSVGRefs = (element) => {
   });
 };
 
-document.addEventListener("DOMContentLoaded", () =>{
+document.addEventListener("DOMContentLoaded", () => {
   // Your code here
-   clickifyPrint(document.getElementById("print"));
+  init();
 });
 
+const init = () => {
+  download(voteid, draw);
+  clickifyPrint(document.getElementById("print"));
+};
 
-document.getElementById("print")
-const clickifyPrint = (dom)  => {
-dom.addEventListener("click", async (e) => {
-  e.preventDefault();
-  const element = document.getElementById("gridmeps");
-  //      const originalTransform = element.style.transform;
-  //      element.style.transform = 'none';
-  inlineSVGRefs(element);
-  htmlToImage
-    .toPng(element, {
-      width: 1600,
-      height: 900,
-      pixelRatio: 1, // Force 1:1 pixel ratio
-      style: {
-        transform: "none",
-        // Force the element to render at the specified dimensions
-        width: "1600px",
-        height: "900px",
-        display: "block",
-        position: "fixed", // Prevents layout shifts
-      },
-      filter: (node) => {
-        if (
-          node.style?.display === "none" ||
-          node.style?.visibility === "hidden" ||
-          node.hidden
-        ) {
-          return false;
-        }
-        // Exclude images that fail to load
-        if (node.tagName === "IMG") {
-          const img = node;
-          console.log(img);
-          return img.complete && img.naturalWidth !== 0;
-        }
-        return true; // Include all other nodes
-      },
-    })
-    .then(function (dataUrl) {
-      const element = document.getElementById("preview");
-      element.src = dataUrl;
+const clickifyPrint = (dom) => {
+  dom.addEventListener("click", async (e) => {
+    e.preventDefault();
+    const element = document.getElementById("gridmeps");
+    //      const originalTransform = element.style.transform;
+    //      element.style.transform = 'none';
+    inlineSVGRefs(element);
+    htmlToImage
+      .toPng(element, {
+        width: 1600,
+        height: 900,
+        pixelRatio: 1, // Force 1:1 pixel ratio
+        style: {
+          transform: "none",
+          // Force the element to render at the specified dimensions
+          width: "1600px",
+          height: "900px",
+          display: "block",
+          position: "fixed", // Prevents layout shifts
+        },
+        filter: (node) => {
+          if (
+            node.style?.display === "none" ||
+            node.style?.visibility === "hidden" ||
+            node.hidden
+          ) {
+            return false;
+          }
+          // Exclude images that fail to load
+          if (node.tagName === "IMG") {
+            const img = node;
+            console.log(img);
+            return img.complete && img.naturalWidth !== 0;
+          }
+          return true; // Include all other nodes
+        },
+      })
+      .then(function (dataUrl) {
+        const element = document.getElementById("preview");
+        element.src = dataUrl;
 
-      const link = document.createElement("a");
-      link.download = "vote.png";
-      link.href = dataUrl;
-      link.click();
-      //        element.style.transform = originalTransform;
-    });
-});
+        const link = document.createElement("a");
+        link.download = "vote.png";
+        link.href = dataUrl;
+        link.click();
+        //        element.style.transform = originalTransform;
+      });
+  });
 };
 
 const groupOrder = [
@@ -102,22 +105,13 @@ const aliasPosition = {
 };
 let parties = [];
 var percentagecolor = null;
-const isMobile = window.matchMedia("screen and (max-width: 768px)").matches;
-
-isMobile &&
-  document
-    .querySelectorAll("table")
-    .forEach((d) => d.classList.add("table-sm"));
-
-download(voteid, draw);
 
 const getParty = (name, country) => {
   const party = parties.find((d) => d.party === name && d.country === country);
   return party;
 };
 
-async function draw() {
-  parties = await dl_parties();
+const updateHtml = () => {
   d3.select(".navbar-toggler").on("click", function () {
     d3.select("#navbarHeader").classed(
       "show",
@@ -153,6 +147,11 @@ async function draw() {
     .on("input", function () {
       d3.select("h3").html(d3.select(this).property("value"));
     });
+};
+
+async function draw() {
+  parties = await dl_parties();
+  updateHtml();
   var percentColors = [
     "#e3e3e3",
     "#27ae60",
@@ -232,16 +231,6 @@ async function draw() {
   //    graphs.group=drawGroup('#eugroup div.graph');
   drawNumbers(graphs);
   graphs.result = drawResult("#result .graph");
-  graphs.search = drawSearch("form#search .graph");
-  var filter = urlParam("q");
-  if (filter) {
-    graphs.search.on("pretransition", function () {
-      graphs.search.on("pretransition", null);
-      d3.select(" .dc-text-filter-input")
-        .attr("value", filter)
-        .dispatch("input");
-    });
-  }
   if (urlParam("country")) {
     d3.select("#party").classed("d-none", false);
   }
@@ -724,12 +713,6 @@ function drawCountry(dom) {
   var graph = dc.barChart(dom);
   graph.relative = true;
 
-  if (isMobile) {
-    heigth = window.screen.width - 80;
-    //        width=900;
-    document.getElementById("country").className += " rotated90";
-  }
-
   function getValue(result) {
     if (graph.relative)
       return function (d) {
@@ -1005,37 +988,6 @@ function drawReport(dom) {
   return graph;
 }
 
-function drawSearch(dom) {
-  var dim = ndx.dimension(function (d) {
-    if (!d.firstname) console.log(d);
-    return (
-      d.firstname.toLowerCase() +
-      " " +
-      d.lastname.toLowerCase() +
-      " " +
-      d.party.toLowerCase()
-    );
-  });
-  var filter = function (query) {
-    //        query = _normalize(query);
-    return function (d) {
-      return d.indexOf(query.toLowerCase()) !== -1;
-    };
-  };
-  var chart = dc
-    .textFilterWidget(dom)
-    .placeHolder("search by name")
-    .filterFunctionFactory(filter)
-    .dimension(dim)
-    .on("renderlet", function () {
-      d3.select(dom + " .dc-text-filter-input")
-        .classed("form-control", true)
-        .on("input.seturl", function () {
-          urlParam("q", this.value);
-        });
-    });
-  return chart;
-}
 
 function addGradients() {
   const container = document.querySelector("#gridmeps .graph");
@@ -1242,153 +1194,6 @@ function drawGrid(dom) {
     addGradients();
   }, 10);
   return graph;
-}
-
-function drawTable(dom) {
-  var dim = ndx.dimension(function (d) {
-    return d.lastname;
-  });
-  var graph = dc
-    .dataTable(dom)
-    .dimension(dim)
-    .size(1000)
-    .sortBy(function (d) {
-      return results.indexOf(d.vote);
-    })
-    .order(d3.ascending)
-    .showSections(false)
-    .on("preRedraw", function () {
-      graph.compact = graphs.total.data() > 400;
-    })
-    .columns([
-      function (d) {
-        return iconify(d.vote);
-      },
-      function (d) {
-        var t = d.firstname + " " + d.lastname;
-        if (!graph.compact)
-          t =
-            //                        "<img class='face' src='https://www.europarl.europa.eu/mepphoto/" +
-            "<img class='face' src='./img/mep/" + d.epid + ".webp' />" + t;
-        return t;
-      },
-      function (d) {
-        return (
-          '<span class="country-flag" title="' +
-          d.country +
-          '">' +
-          iconify(d.country, "flag") +
-          "</span>"
-        );
-      },
-      function (d) {
-        return (
-          "<span title='" +
-          d.eugroup +
-          "' class='img-rounded text-filter eugroup " +
-          d.eugroup.replace(/&|\/| |car/g, "-").toLowerCase() +
-          "'>" +
-          d.eugroup +
-          "</span>"
-        );
-      },
-      ,
-      function (d) {
-        if (d.prevGroup) {
-          return (
-            "<span title='was " +
-            d.prevGroup +
-            " at the vote, now " +
-            d.eugroup +
-            "' class='img-rounded text-filter eugroup " +
-            d.prevGroup.replace(/&|\/|car/g, "-").toLowerCase() +
-            "'>" +
-            d.prevGroup +
-            "</span>"
-          );
-        }
-        if (d.rebel) return iconify("rebel");
-      },
-      function (d) {
-        return d.party;
-      },
-    ]);
-
-  //    drawPagination();
-  sortable(graph);
-
-  graph.on("pretransition", function (chart) {
-    graph
-      .selectAll("tr.dc-table-row")
-      //      .call(tip)
-      .on("click", tweet);
-  });
-
-  return graph;
-
-  function tweet(d) {
-    if (d.twitter) {
-      var url =
-        "https://twitter.com/intent/tweet?text=" +
-        encodeURIComponent("Why did you vote that way? @" + d.twitter) +
-        "&via=mepwatch";
-      //        url = url.replace(/#/g, '%23');
-      var win = window.open(url, "_blank");
-    }
-  }
-
-  function sortable(chart) {
-    var th = [
-      {
-        attr: function (d) {
-          return results.indexOf(d.vote);
-        },
-      },
-      //        ,{attr:"twitter"}
-      { attr: "last_name" },
-      { attr: "country" },
-      { attr: "eugroup" },
-      { attr: (d) => d.prevGroup || (d.rebel === true ? "r" : "z") },
-      { attr: "party" },
-    ];
-    d3.selectAll("th")
-      .data(th)
-      .attr("class", function (d) {
-        if (d.attr) return "sortable";
-      })
-      .attr("id", function (d, i) {
-        return d.attr && typeof d.attr != "function" ? d.attr : "col_" + i;
-      });
-
-    d3.selectAll("th.sortable")
-      .on("click", function (d) {
-        var icon = d3.select(this).select("i.glyphicon");
-        var up = icon.classed("glyphicon-arrow-up");
-        d3.selectAll("th.sortable .glyphicon").attr(
-          "class",
-          "glyphicon glyphicon-sort",
-        );
-        if (!up) {
-          icon.attr("class", "glyphicon glyphicon-arrow-up");
-          chart.order(d3.ascending);
-        } else {
-          icon.attr("class", "glyphicon glyphicon-arrow-down");
-          chart.order(d3.descending);
-        }
-        if (typeof d.attr == "function") {
-          chart.sortBy(d.attr);
-        } else {
-          chart.sortBy(function (e) {
-            return e[d.attr];
-          });
-        }
-        chart.redraw();
-      })
-      .append("i")
-      .attr("class", "glyphicon glyphicon-sort");
-
-    d3.select("th#col_0 i").attr("class", "glyphicon glyphicon-arrow-down");
-  }
 }
 
 function urlParam(name, value) {
