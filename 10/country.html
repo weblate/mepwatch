@@ -19,6 +19,15 @@
 
     <link rel="prefetch" href="./data/meps.csv" as="fetch" />
     <link href="./country.css" rel="stylesheet" />
+    <script src="../node_modules/html-to-image/dist/html-to-image.js"></script>
+    <script src="../dist/js/dcbundle.js"></script>
+    <script src="js/vote.js"></script>
+    <script src="js/country.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        init();
+      });
+    </script>
   </head>
   <body>
     <header>
@@ -33,7 +42,7 @@
               <h4 class="">Contact</h4>
               <ul class="list-unstyled">
                 <li>
-                  <a href="https://bsky.app/profile/europarl.bsky.social" 
+                  <a href="https://bsky.app/profile/europarl.bsky.social"
                     >Follow on bluesky</a
                   >
                 </li>
@@ -168,12 +177,6 @@
         </p>
       </div>
     </footer>
-
-    <!-- Optional JavaScript -->
-    <script src="../node_modules/html-to-image/dist/html-to-image.js"></script>
-    <script src="../dist/js/dcbundle.js"></script>
-    <script src="js/vote.js"></script>
-    <script src="js/country.js"></script>
 
     <button id="print" class="btn btn-large btn-primary">Save<i>🖨</i></button>
 

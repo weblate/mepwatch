@@ -26,11 +26,6 @@ const inlineSVGRefs = (element) => {
   });
 };
 
-document.addEventListener("DOMContentLoaded", () => {
-  // Your code here
-  init();
-});
-
 const init = () => {
   download(voteid, draw);
   clickifyPrint(document.getElementById("print"));
