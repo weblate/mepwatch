@@ -26,11 +26,6 @@ const inlineSVGRefs = (element) => {
   });
 };
 
-const init = () => {
-  download(voteid, draw);
-  clickifyPrint(document.getElementById("print"));
-};
-
 const clickifyPrint = (dom) => {
   dom.addEventListener("click", async (e) => {
     e.preventDefault();
@@ -1220,3 +1215,10 @@ function urlParam(name, value) {
     }
   }
 }
+
+const init = () => {
+  download(voteid, draw);
+  clickifyPrint(document.getElementById("print"));
+};
+
+
