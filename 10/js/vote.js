@@ -1,7 +1,7 @@
 "use strict";
 let ndx = null;
 const graphs = {};
-const q = d3.queue();
+
 let meps = [];
 let votes = [];
 let config = {};
@@ -130,6 +130,7 @@ function download(voteid, callback) {
 //TODO : add start10 and use it
     return d.start9 <= config.date && (d.end == null || d.end >= config.date);
   }
+  const q = d3.queue();
 
   q.defer(dl_meps)
     .defer(dl_details)
