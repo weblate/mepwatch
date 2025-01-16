@@ -1216,9 +1216,10 @@ function urlParam(name, value) {
   }
 }
 
-const window.init = () => {
-  download(voteid, draw);
+function init (id) {
+  download(id || window.voteid, draw);
   clickifyPrint(document.getElementById("print"));
 };
 
+console.log("init");
 
