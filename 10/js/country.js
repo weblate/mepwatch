@@ -471,11 +471,12 @@ function isRebel(store, mep, key) {
   if (["for", "against", "abstention"].indexOf(mep.vote) == -1) return false; // you aren't a rebel when you are a noshow ;)
   return store[key(mep)] && store[key(mep)] !== mep.vote;
 }
+
 function drawResult(dom) {
-  consconstt      resultscolor = d3
-          .scaleOrdinal()
-          .domain(results)
-          .range("#27ae60,#c0392b,#2980b9,#6699CC,#95a5a6,#34495e".split(","));
+  const resultscolor = 
+    d3.scaleOrdinal()
+    .domain(results)
+    .range("#27ae60,#c0392b,#2980b9,#6699CC,#95a5a6,#34495e".split(","));
 
   var graph = dc.pieChart(dom).innerRadius(40); //.radius(radius);
   var dim = ndx.dimension(function (d) {
@@ -983,7 +984,6 @@ function drawReport(dom) {
   return graph;
 }
 
-
 function addGradients() {
   const container = document.querySelector("#gridmeps .graph");
   const items = container.querySelectorAll(".dc-grid-top");
@@ -1221,13 +1221,12 @@ function urlParam(name, value) {
   }
 }
 
-function init (id) {
-setTimeout(() => {
-  console.log("vote id",id, window.voteid);
-  download(id || window.voteid, draw);
-  clickifyPrint(document.getElementById("print"));
-}, 0);
-};
+function init(id) {
+  setTimeout(() => {
+    console.log("vote id", id, window.voteid);
+    download(id || window.voteid, draw);
+    clickifyPrint(document.getElementById("print"));
+  }, 0);
+}
 
 console.log("init");
-
