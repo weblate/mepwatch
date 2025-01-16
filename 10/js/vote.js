@@ -9,11 +9,6 @@ let config = {};
 let voteid = urlParam("v");
 //const results = "for,against,abstention,no show,excused,attended".split(",");
 const results = "for,against,abstention,attended,no show,excused".split(",");
-const        resultscolor = d3
-          .scaleOrdinal()
-          .domain(results)
-//          .range("#27ae60,#c0392b,#2980b9,#95a5a6,#34495e,#6699CC".split(","));
-          .range("#27ae60,#c0392b,#2980b9,#6699CC,#95a5a6,#34495e".split(","));
 
 const flag = (isoCode) => {
   const offset = 127397;

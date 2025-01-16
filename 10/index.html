@@ -277,6 +277,7 @@
           .forEach((d) => d.classList.add("table-sm"));
 
       //d3.csv('data/ep_votes.csv',function(d){
+      const q = d3.queue();
       q.defer(dl_votes)
         .defer(dl_doc)
         .awaitAll(function (error, results) {

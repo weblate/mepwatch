@@ -389,8 +389,16 @@
           .forEach((d) => d.classList.add("table-sm"));
 
       download(voteid, draw);
+      let resultscolor = null;
 
       function draw() {
+
+        resultscolor = d3
+          .scaleOrdinal()
+          .domain(results)
+          .range("#27ae60,#c0392b,#2980b9,#6699CC,#95a5a6,#34495e".split(","));
+
+
         d3.select(".navbar-toggler").on("click", function () {
           d3.select("#navbarHeader").classed(
             "show",
