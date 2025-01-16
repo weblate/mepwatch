@@ -219,6 +219,7 @@ async function draw() {
   });
 
   //    graphs.group=drawGroup('#eugroup div.graph');
+  graphs.grid = drawGrid("#gridmeps .graph");
   drawNumbers(graphs);
   graphs.result = drawResult("#result .graph");
   if (urlParam("country")) {
@@ -241,7 +242,6 @@ async function draw() {
       })(filter.split("|"));
     }
   });
-  graphs.grid = drawGrid("#gridmeps .graph");
   dc.renderAll();
 
   //             graphs.table = drawTable("table.table");
