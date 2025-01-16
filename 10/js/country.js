@@ -472,6 +472,11 @@ function isRebel(store, mep, key) {
   return store[key(mep)] && store[key(mep)] !== mep.vote;
 }
 function drawResult(dom) {
+  consconstt      resultscolor = d3
+          .scaleOrdinal()
+          .domain(results)
+          .range("#27ae60,#c0392b,#2980b9,#6699CC,#95a5a6,#34495e".split(","));
+
   var graph = dc.pieChart(dom).innerRadius(40); //.radius(radius);
   var dim = ndx.dimension(function (d) {
     return d.vote || "?";
