@@ -124,6 +124,13 @@ const dayFormat = d3.timeFormat("%Y-%m-%d");
 const dateFormat = d3.timeFormat("%Y-%m-%d %H:%M:%S");
 const formatPercent = d3.format(".0%");
 
+const baseUrl = new URL(document.currentScript && document.currentScript.src); 
+const dataUrl = (path) => {
+  const url = new URL("../"+path, baseUrl);
+  console.log("Script URL:", url);
+  return url;
+}
+
 function download(voteid, callback) {
   function isActive(d) {
     //relies on global config.date, the date of the vote 
@@ -199,7 +206,7 @@ function download(voteid, callback) {
 
 
 function dl_details(callback) {
-  d3.json("cards/" + voteid + ".json")
+  d3.json(dataUrl("cards/" + voteid + ".json"))
     .then(function (d) {
       document.title =
         (d.name == "CHANGE ME" ? "" : d.name) +
@@ -239,7 +246,7 @@ function dl_details(callback) {
     });
 }
 function dl_votes(callback) {
-  d3.csv("cards/" + voteid + ".csv", function (d) {
+  d3.csv(dataUrl("cards/" + voteid + ".csv"), function (d) {
     if (!d.mepid) return null;
     d.mepid = +d.mepid;
     d.vote_id = +d.vote_id;
@@ -255,7 +262,7 @@ function dl_votes(callback) {
 }
 
 function dl_meps(callback) {
-  d3.csv("data/meps.csv", function (d) {
+  d3.csv(dataUrl ("data/meps.csv"), function (d) {
     //      d.date=dateParse(d.date.substring(0,10));
     //      if (!d.date) {console.log(d)};
     d.voteid = +d.epid; // we are now joining on the epid
@@ -279,7 +286,7 @@ function dl_meps(callback) {
 }
 
 function dl_parties(callback) {
-  return d3.csv("data/parties.csv", function (d) {
+  return d3.csv(dataUrl("data/parties.csv"), function (d) {
 //    if (!d.mepid) return null;
 //    d.mepid = +d.mepid;
 //    d.vote_id = +d.vote_id;
