@@ -472,11 +472,14 @@ function isRebel(store, mep, key) {
   return store[key(mep)] && store[key(mep)] !== mep.vote;
 }
 
-function drawResult(dom) {
-  const resultscolor = 
-    d3.scaleOrdinal()
+function getResultColor (results) {
+  return d3.scaleOrdinal()
     .domain(results)
     .range("#27ae60,#c0392b,#2980b9,#6699CC,#95a5a6,#34495e".split(","));
+}
+function drawResult(dom) {
+
+  const resultscolor = getResultColor (results);
 
   var graph = dc.pieChart(dom).innerRadius(40); //.radius(radius);
   var dim = ndx.dimension(function (d) {
@@ -544,6 +547,7 @@ function drawBarVotes(dom, dimension) {
   //var dim = ndx.dimension(function(d) {return d[dimension]});
   //const width = isMobile ? window.screen.width - 40 : 220;
   const width = 0;
+  const resultscolor = getResultColor (results);
   var dim = ndx.dimension(dimension);
   var reducer = reductio();
   reducer.value("nb").count(true);
@@ -685,6 +689,7 @@ const drawSelectCountry = (dom) => {
 };
 
 function drawCountry(dom) {
+  const resultscolor = getResultColor (results);
   let heigth = 186;
   let width = 0;
   var dim = ndx.dimension(function (d) {
