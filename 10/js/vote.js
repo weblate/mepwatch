@@ -125,7 +125,8 @@ const dateFormat = d3.timeFormat("%Y-%m-%d %H:%M:%S");
 const formatPercent = d3.format(".0%");
 
 const baseUrl = new URL(document.currentScript && document.currentScript.src); 
-const dataUrl = (path) => {
+
+function dataUrl (path) {
   const url = new URL("../"+path, baseUrl);
   console.log("Script URL:", url);
   return url;
