@@ -1216,7 +1216,7 @@ function urlParam(name, value) {
   }
 }
 
-const init = () => {
+const window.init = () => {
   download(voteid, draw);
   clickifyPrint(document.getElementById("print"));
 };
