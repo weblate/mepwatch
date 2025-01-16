@@ -1217,8 +1217,11 @@ function urlParam(name, value) {
 }
 
 function init (id) {
+setTimeout(() => {
+  console.log("vote id",id, window.voteid);
   download(id || window.voteid, draw);
   clickifyPrint(document.getElementById("print"));
+}, 0);
 };
 
 console.log("init");
