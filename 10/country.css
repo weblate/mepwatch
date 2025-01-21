@@ -332,7 +332,7 @@ svg.icon-attended use {
     to bottom,
     rgba(255, 255, 255, 255),
     #2e975a
-  );
+  )!important;
 }
 
 .gradient.top {
@@ -341,7 +341,7 @@ svg.icon-attended use {
     to bottom,
     #1d7c57,
     rgba(255, 255, 255, 255)
-  );
+  )!important;
 }
 
 .dc-grid-item {

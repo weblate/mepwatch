@@ -57,7 +57,6 @@ const clickifyPrint = (dom) => {
           // Exclude images that fail to load
           if (node.tagName === "IMG") {
             const img = node;
-            console.log(img);
             return img.complete && img.naturalWidth !== 0;
           }
           return true; // Include all other nodes
@@ -227,6 +226,7 @@ async function draw() {
   }
 
   ["eugroup", "country"].forEach(function (d) {
+    if (!graphs[d]) return;
     graphs[d].on("filtered", function (graph) {
       var f = graph.filters().join("|");
       urlParam(d, f);
@@ -544,6 +544,7 @@ function drawResult(dom) {
 }
 
 function drawBarVotes(dom, dimension) {
+  if (d3.select(dom).empty()) return undefined;
   //var dim = ndx.dimension(function(d) {return d[dimension]});
   //const width = isMobile ? window.screen.width - 40 : 220;
   const width = 0;
@@ -689,6 +690,7 @@ const drawSelectCountry = (dom) => {
 };
 
 function drawCountry(dom) {
+  if (d3.select(dom).empty()) return undefined;
   const resultscolor = getResultColor (results);
   let heigth = 186;
   let width = 0;
@@ -1187,10 +1189,8 @@ function drawGrid(dom) {
       //                  d3.selectAll(".dc-grid-item").attr("class", "grid mep");
       //                  d3.selectAll(".dc-grid-top").attr("class", "row");
     });
-  console.log("render");
   setTimeout(() => {
     //                justifyColumns();
-    console.log("render timeout");
     addGradients();
   }, 10);
   return graph;
@@ -1234,4 +1234,3 @@ function init(id) {
   }, 0);
 }
 
-console.log("init");

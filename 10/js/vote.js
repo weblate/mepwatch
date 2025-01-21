@@ -1,4 +1,5 @@
 "use strict";
+
 let ndx = null;
 const graphs = {};
 
@@ -37,7 +38,6 @@ function arrayToCSV(data) {
   return csvRows.join("\n");
 }
 
-// Function to download the CSV file
 function downloadCSV(id) {
   const data =graphs.table.dimension().top(Infinity).map (d => ({vote:d.vote,firstname:d.firstname,lastname:d.lastname,country:d.country,id:d.epid,group:d.eugroup,party:d.party}));
 //  const data = ndx.all().map (...
@@ -59,6 +59,7 @@ const groupAlias = {
   "GUE/NGL": "The Left",
   "PfE": "Patriots",
 };
+
 var countries = {
   be: "Belgium",
   bg: "Bulgaria",
@@ -119,11 +120,13 @@ const dayFormat = d3.timeFormat("%Y-%m-%d");
 const dateFormat = d3.timeFormat("%Y-%m-%d %H:%M:%S");
 const formatPercent = d3.format(".0%");
 
-const baseUrl = new URL(document.currentScript && document.currentScript.src); 
+var mwbaseUrl = new URL(document.currentScript && document.currentScript.src); 
 
 function dataUrl (path) {
-  const url = new URL("../"+path, baseUrl);
-  console.log("Script URL:", url);
+  if (!mwbaseUrl)
+    console.error("mwbaseUrl undefined",document.currentScript?.src);
+  
+  const url = new URL("../"+path, mwbaseUrl);
   return url;
 }
 
@@ -135,6 +138,7 @@ function download(voteid, callback) {
   }
   const q = d3.queue();
 
+console.log ("download...");
   q.defer(dl_meps)
     .defer(dl_details)
     .defer(dl_votes)
@@ -341,3 +345,19 @@ function urlParam(name, value) {
     }
   }
 }
+
+setTimeout ( () => {
+
+document.dispatchEvent(new CustomEvent('mepwatch.vote_ready', {
+  detail: {
+    ndx,
+    graphs,
+    meps,
+    config,
+    baseUrl:mwbaseUrl,
+  }
+}));
+
+}, 0);
+
+
