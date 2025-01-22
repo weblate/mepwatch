@@ -1235,7 +1235,7 @@ function init(id) {
 }
 
 setTimeout ( () => {
-
+console.log("dispatch mepwatch.country_ready");
 document.dispatchEvent(new CustomEvent('mepwatch.country_ready', {
   detail: {
     init,
