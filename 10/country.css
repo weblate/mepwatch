@@ -218,6 +218,7 @@ svg.icon-attended use {
 }
 
 .party span.img-rounded {
+height:auto;
 }
 .party span.text {
   flex: 1 1 auto; /* Allow text to take up remaining space */
