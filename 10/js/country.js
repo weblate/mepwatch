@@ -991,22 +991,52 @@ function drawReport(dom) {
   return graph;
 }
 
+function cloneRect (top, left) {
+  const div = document.createElement('div');
+  div.classList.add ("cloned","dc-grid-top");
+  //const items = top.querySelectorAll(".dc-grid-top div");
+console.log("column",left);
+  const items = top.childNodes;
+  items.forEach((item) => {
+    const irect = item.getBoundingClientRect();
+  const clonedItem = item.cloneNode(true); 
+console.log("item",irect.left);
+    if (irect.left === left)
+          //div.appendChild(item);
+          div.appendChild(clonedItem);
+  });
+  return div;
+}
 function addGradients() {
+  const clonedItems = [];
   const container = document.querySelector("#gridmeps .graph");
   const items = container.querySelectorAll(".dc-grid-top");
   // Remove existing gradients
-  const existingGradients = container.querySelectorAll(".cgradient");
-  existingGradients.forEach((gradient) => gradient.remove());
   const scrollTop =
     document.documentElement.scrollTop || document.body.scrollTop;
   const scrollLeft =
     document.documentElement.scrollLeft || document.body.scrollLeft;
-
   items.forEach((item) => {
+    const paddingLeft = parseFloat(getComputedStyle(item).paddingLeft);
     const rects = Array.from(item.getClientRects());
     if (rects.length > 1) {
+console.log("split in columns",item.firstChild?.firstChild, rects);
       rects.forEach((rect, index) => {
-        const gradientContainer = document.createElement("div");
+        const cloned = cloneRect (item,rect.left + paddingLeft);
+        cloned.id ="cloned_"+index;
+//        container.insertBefore(cloned, item);
+console.log(cloned,item.firstChild.firstChild);
+        const gradient = document.createElement("div");
+        if (index === 0) {
+          gradient.classList.add("gradient","bottom");
+          cloned.insertBefore(gradient, cloned.firstChild);
+        } else {
+          gradient.classList.add("gradient","top");
+          cloned.appendChild(gradient);
+        }
+        clonedItems.push(cloned);
+/*
+
         gradientContainer.classList.add("cgradient");
         gradientContainer.style.position = "absolute";
         gradientContainer.style.left = `${rect.left + scrollLeft}px`;
@@ -1028,55 +1058,16 @@ function addGradients() {
           console.log(gradientContainer);
           gradientContainer.appendChild(topGradient);
         }
+*/
       });
+//      container.removeChild(item);
+    } else {
+console.log("in a single column",item.firstChild?.firstChild, rects);
+       clonedItems.push(item.cloneNode(true)); 
     }
   });
-}
-
-// Function to justify content vertically within columns
-function justifyColumns() {
-  function calculateColumnHeights() {
-    let previousLeft = null;
-    let column = -1;
-    const columnHeights = [];
-    const columnItems = [];
-    const containerRect = container.getBoundingClientRect();
-    const columnCount = parseFloat(getComputedStyle(container).columnCount);
-    const columnWidth = container.offsetWidth / columnCount;
-    boxes.forEach((item) => {
-      const rects = Array.from(item.getClientRects());
-      rects.forEach((rect) => {
-        if (rect.left !== previousLeft) {
-          column++;
-          previousLeft = rect.left;
-          columnItems[column] = [];
-        }
-        columnHeights[column] = (columnHeights[column] || 0) + rect.height;
-      });
-      columnItems[column].push(item);
-    });
-
-    return [columnHeights, columnItems];
-  }
-  const marginBottom = 10;
-  const container = document.querySelector("#gridmeps .graph");
-  const boxes = Array.from(container.children);
-  console.log("aa", container, boxes);
-  const columnCount = getComputedStyle(container).columnCount;
-  const containerHeight = container.offsetHeight;
-  // Wait for layout to settle
-  setTimeout(() => {
-    const [columnHeights, columns] = calculateColumnHeights();
-    const maxColumnHeight = Math.max(...columnHeights);
-
-    columns.forEach((col, i) => {
-      const space = maxColumnHeight - columnHeights[i];
-      console.log(space, col.length, space / col.length);
-      col.forEach((box) => {
-        if (space) box.style.marginBottom = `${space - 10}px`;
-      });
-    });
-  }, 10);
+  container.innerHTML ='';
+  clonedItems.forEach (item => container.appendChild(item)); 
 }
 
 function drawGrid(dom) {
@@ -1192,7 +1183,7 @@ function drawGrid(dom) {
   setTimeout(() => {
     //                justifyColumns();
     addGradients();
-  }, 10);
+  }, 100);
   return graph;
 }
 

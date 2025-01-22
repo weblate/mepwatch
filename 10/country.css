@@ -208,7 +208,7 @@ svg.icon-attended use {
 
 .party img,
 .party svg {
-  flex: 0 0 auto;
+  _ndflex: 0 0 auto;
   height: 30px;
   max-width: 50px;
 }
@@ -218,10 +218,12 @@ svg.icon-attended use {
 }
 
 .party span.img-rounded {
-height:auto;
+height:30px;
+width:30px;
 }
+
 .party span.text {
-  flex: 1 1 auto; /* Allow text to take up remaining space */
+  flex: 1; /* Allow text to take up remaining space */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -312,22 +314,25 @@ height:auto;
   margin-bottom: 10px;
   break-inside: auto;
   _box-decoration-break: clone;
-  -position: relative;
+  position: relative;
 }
 
-.avoid-break {
+
+.cloned, .avoid-break {
   break-inside: avoid;
 }
 .cgradient {
 }
 .gradient {
   position: absolute; /* Crucial for positioning within each rect */
-  width: 100%;
+  left: 0;
+  right: 0;
   height: 10px;
   pointer-events: none;
 }
+
 .gradient.bottom {
-  bottom: -9px;
+  bottom: -20px;
   height: 20px;
   background-image: linear-gradient(
     to bottom,
@@ -337,7 +342,7 @@ height:auto;
 }
 
 .gradient.top {
-  top: -9px;
+  top: -2px;
   background-image: linear-gradient(
     to bottom,
     #1d7c57,
