@@ -472,14 +472,14 @@ function isRebel(store, mep, key) {
   return store[key(mep)] && store[key(mep)] !== mep.vote;
 }
 
-function getResultColor (results) {
-  return d3.scaleOrdinal()
+function getResultColor(results) {
+  return d3
+    .scaleOrdinal()
     .domain(results)
     .range("#27ae60,#c0392b,#2980b9,#6699CC,#95a5a6,#34495e".split(","));
 }
 function drawResult(dom) {
-
-  const resultscolor = getResultColor (results);
+  const resultscolor = getResultColor(results);
 
   var graph = dc.pieChart(dom).innerRadius(40); //.radius(radius);
   var dim = ndx.dimension(function (d) {
@@ -548,7 +548,7 @@ function drawBarVotes(dom, dimension) {
   //var dim = ndx.dimension(function(d) {return d[dimension]});
   //const width = isMobile ? window.screen.width - 40 : 220;
   const width = 0;
-  const resultscolor = getResultColor (results);
+  const resultscolor = getResultColor(results);
   var dim = ndx.dimension(dimension);
   var reducer = reductio();
   reducer.value("nb").count(true);
@@ -691,7 +691,7 @@ const drawSelectCountry = (dom) => {
 
 function drawCountry(dom) {
   if (d3.select(dom).empty()) return undefined;
-  const resultscolor = getResultColor (results);
+  const resultscolor = getResultColor(results);
   let heigth = 186;
   let width = 0;
   var dim = ndx.dimension(function (d) {
@@ -991,19 +991,19 @@ function drawReport(dom) {
   return graph;
 }
 
-function cloneRect (top, left) {
-  const div = document.createElement('div');
-  div.classList.add ("cloned","dc-grid-top");
+function cloneRect(top, left) {
+  const div = document.createElement("div");
+  div.classList.add("cloned", "dc-grid-top");
   //const items = top.querySelectorAll(".dc-grid-top div");
-console.log("column",left);
+  console.log("column", left);
   const items = top.childNodes;
   items.forEach((item) => {
     const irect = item.getBoundingClientRect();
-  const clonedItem = item.cloneNode(true); 
-console.log("item",irect.left);
+    const clonedItem = item.cloneNode(true);
+    console.log("item", irect.left);
     if (irect.left === left)
-          //div.appendChild(item);
-          div.appendChild(clonedItem);
+      //div.appendChild(item);
+      div.appendChild(clonedItem);
   });
   return div;
 }
@@ -1020,22 +1020,22 @@ function addGradients() {
     const paddingLeft = parseFloat(getComputedStyle(item).paddingLeft);
     const rects = Array.from(item.getClientRects());
     if (rects.length > 1) {
-console.log("split in columns",item.firstChild?.firstChild, rects);
+      console.log("split in columns", item.firstChild?.firstChild, rects);
       rects.forEach((rect, index) => {
-        const cloned = cloneRect (item,rect.left + paddingLeft);
-        cloned.id ="cloned_"+index;
-//        container.insertBefore(cloned, item);
-console.log(cloned,item.firstChild.firstChild);
+        const cloned = cloneRect(item, rect.left + paddingLeft);
+        cloned.id = "cloned_" + index;
+        //        container.insertBefore(cloned, item);
+        console.log(cloned, item.firstChild.firstChild);
         const gradient = document.createElement("div");
         if (index === 0) {
-          gradient.classList.add("gradient","bottom");
+          gradient.classList.add("gradient", "bottom");
           cloned.insertBefore(gradient, cloned.firstChild);
         } else {
-          gradient.classList.add("gradient","top");
+          gradient.classList.add("gradient", "top");
           cloned.appendChild(gradient);
         }
         clonedItems.push(cloned);
-/*
+        /*
 
         gradientContainer.classList.add("cgradient");
         gradientContainer.style.position = "absolute";
@@ -1060,14 +1060,14 @@ console.log(cloned,item.firstChild.firstChild);
         }
 */
       });
-//      container.removeChild(item);
+      //      container.removeChild(item);
     } else {
-console.log("in a single column",item.firstChild?.firstChild, rects);
-       clonedItems.push(item.cloneNode(true)); 
+      console.log("in a single column", item.firstChild?.firstChild, rects);
+      clonedItems.push(item.cloneNode(true));
     }
   });
-  container.innerHTML ='';
-  clonedItems.forEach (item => container.appendChild(item)); 
+  container.innerHTML = "";
+  clonedItems.forEach((item) => container.appendChild(item));
 }
 
 function drawGrid(dom) {
@@ -1129,14 +1129,16 @@ function drawGrid(dom) {
         );
       }
       return (
+        "<div class='party'>" +
+        "<span class='text'>" +
         party +
-        "<span title='" +
+        "</span><span title='" +
         group +
         "' class='img-rounded text-filter eugroup " +
         group.replace(/&|\/| |car/g, "-").toLowerCase() +
         "'>" +
         group +
-        "</span>"
+        "</span></div>"
       );
     })
     .section(function (d) {
@@ -1225,14 +1227,15 @@ function init(id) {
   }, 0);
 }
 
-setTimeout ( () => {
-console.log("dispatch mepwatch.country_ready");
-document.dispatchEvent(new CustomEvent('mepwatch.country_ready', {
-  detail: {
-    init,
-    draw,
-    drawGrid,
-  }
-}));
-
+setTimeout(() => {
+  console.log("dispatch mepwatch.country_ready");
+  document.dispatchEvent(
+    new CustomEvent("mepwatch.country_ready", {
+      detail: {
+        init,
+        draw,
+        drawGrid,
+      },
+    }),
+  );
 }, 0);
