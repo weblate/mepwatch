@@ -1153,10 +1153,8 @@ function drawGrid(dom) {
           if (rect.left > 1600) {
             console.log("overflow TODO, get column",rect.left, column);
             // increase column
-      d3.select(chart.anchor()).style("column-count", column +1);
-      [2, 3, 4, 5, 6, 7].forEach((i) =>
-        grid.classed("column-" + i, i === column + 1),
-      );
+//      d3.select(chart.anchor()).style("column-count", column +1);
+//      [2, 3, 4, 5, 6, 7].forEach((i) => grid.classed("column-" + i, i === column + 1),);
           }
           })
          });
