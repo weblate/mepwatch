@@ -1150,7 +1150,7 @@ function drawGrid(dom) {
           const element = d3.select(this);
           const rects = Array.from(element.node().getClientRects());
           rects.forEach( rect => { 
-          if (rect.right > 1600) {
+          if (rect.left > 1600) {
             console.log("overflow TODO, get column",rect.left, column);
             // increase column
       d3.select(chart.anchor()).style("column-count", column +1);
