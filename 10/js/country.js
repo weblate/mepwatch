@@ -135,6 +135,7 @@ const updateHtml = () => {
     )
     .on("input", function () {
       d3.select("h3").html(d3.select(this).property("value"));
+      graphs.grid.redraw();
     });
 };
 
@@ -995,12 +996,10 @@ function cloneRect(top, left) {
   const div = document.createElement("div");
   div.classList.add("cloned", "dc-grid-top");
   //const items = top.querySelectorAll(".dc-grid-top div");
-  console.log("column", left);
   const items = top.childNodes;
   items.forEach((item) => {
     const irect = item.getBoundingClientRect();
     const clonedItem = item.cloneNode(true);
-    console.log("item", irect.left);
     if (irect.left === left)
       //div.appendChild(item);
       div.appendChild(clonedItem);
@@ -1020,12 +1019,11 @@ function addGradients() {
     const paddingLeft = parseFloat(getComputedStyle(item).paddingLeft);
     const rects = Array.from(item.getClientRects());
     if (rects.length > 1) {
-      console.log("split in columns", item.firstChild?.firstChild, rects);
+//      console.log("split in columns", item.firstChild?.firstChild, rects);
       rects.forEach((rect, index) => {
         const cloned = cloneRect(item, rect.left + paddingLeft);
         cloned.id = "cloned_" + index;
         //        container.insertBefore(cloned, item);
-        console.log(cloned, item.firstChild.firstChild);
         const gradient = document.createElement("div");
         if (index === 0) {
           gradient.classList.add("gradient", "bottom");
@@ -1035,34 +1033,10 @@ function addGradients() {
           cloned.appendChild(gradient);
         }
         clonedItems.push(cloned);
-        /*
-
-        gradientContainer.classList.add("cgradient");
-        gradientContainer.style.position = "absolute";
-        gradientContainer.style.left = `${rect.left + scrollLeft}px`;
-        gradientContainer.style.top = `${rect.top + scrollTop}px`;
-        gradientContainer.style.width = rect.width + "px";
-        gradientContainer.style.height = rect.height + "px";
-        item.appendChild(gradientContainer);
-
-        if (index === 0) {
-          // First rect: bottom gradient
-          const bottomGradient = document.createElement("div");
-          bottomGradient.classList.add("gradient", "bottom");
-          gradientContainer.appendChild(bottomGradient);
-        }
-        if (index === rects.length - 1) {
-          // Last rect: top gradient
-          const topGradient = document.createElement("div");
-          topGradient.classList.add("gradient", "top");
-          console.log(gradientContainer);
-          gradientContainer.appendChild(topGradient);
-        }
-*/
       });
       //      container.removeChild(item);
     } else {
-      console.log("in a single column", item.firstChild?.firstChild, rects);
+//      console.log("in a single column", item.firstChild?.firstChild, rects);
       clonedItems.push(item.cloneNode(true));
     }
   });
@@ -1165,27 +1139,30 @@ function drawGrid(dom) {
       const column = columns(items);
       const grid = d3.select(chart.anchor());
 
-      d3.select(chart.anchor()).style("column-count", columns(items));
+      d3.select(chart.anchor()).style("column-count", column);
       [2, 3, 4, 5, 6, 7].forEach((i) =>
         grid.classed("column-" + i, i === column),
       );
-      d3.select(chart.anchor())
+  setTimeout(() => {
+      d3
         .selectAll(".dc-grid-top")
         .each(function () {
           const element = d3.select(this);
-          //const height = element.node().getBoundingClientRect().height;
           const rects = Array.from(element.node().getClientRects());
-          if (rects.length > 1 && rects[0].height < 80) {
-            //    element.classed("avoid-break", true);
+          rects.forEach( rect => { 
+          if (rect.right > 1600) {
+            console.log("overflow TODO, get column",rect.right, column);
+            // increase column
+      d3.select(chart.anchor()).style("column-count", column +1);
+      [2, 3, 4, 5, 6, 7].forEach((i) =>
+        grid.classed("column-" + i, i === column + 1),
+      );
           }
-        });
-      //                  d3.selectAll(".dc-grid-item").attr("class", "grid mep");
-      //                  d3.selectAll(".dc-grid-top").attr("class", "row");
-    });
-  setTimeout(() => {
-    //                justifyColumns();
+          })
+         });
     addGradients();
   }, 100);
+    });
   return graph;
 }
 
