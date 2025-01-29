@@ -551,24 +551,7 @@
 
       function drawSearch(dom) {
         const dim = ndx.dimension((d) => d.identifier);
-        const dim2 = ndx.dimension(function (d) {
-          //var t= docs[d.report] && docs[d.report].name ? docs[d.report].name.toLowerCase() : "";
-          var t =
-            docs[d.report] && docs[d.report].title
-              ? docs[d.report].title.toLowerCase()
-              : "";
-          return (
-            t +
-            d.report.toLowerCase() +
-            " " +
-            d.desc.toLowerCase() +
-            " " +
-            d.for +
-            " " +
-            d.against
-          );
-        });
-        var filter = function (query) {
+        const filter = function (query) {
           //        query = _normalize(query);
           const search = flex.search(query);
           console.log(search, query);
@@ -579,10 +562,10 @@
           };
         };
 
-        var q = urlParam("q");
+        const q = urlParam("q");
         const doc = urlParam("doc");
 
-        var chart = dc
+        const chart = dc
           .textFilterWidget(dom)
           .placeHolder("Search")
           .filterFunctionFactory(filter)
