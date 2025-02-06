@@ -119,16 +119,17 @@ th#twitter {
   background-position: center;
 }
 
-svg.icon-against use {
+svg.icon-against use, svg.icon-against {
   color: #c0392b;
 }
-svg.icon-abstention use {
+svg.icon-abstention * {
   color: #2980b9;
 }
-svg.icon-for use {
+svg.icon-for *, svg.icon-for {
   color: #27ae60;
 }
-svg.icon-attended use {
+
+svg.icon-attended * {
   color: #6699cc;
 }
 .pie-slice use {

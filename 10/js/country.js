@@ -7,19 +7,19 @@ const inlineSVGRefs = (element) => {
       if (href) {
         const referenceElement = document.querySelector(href);
         if (referenceElement) {
-          // Clone the referenced content
+         const newSVG = document.createElementNS("http://www.w3.org/2000/svg", "svg");
           const clonedContent = referenceElement.cloneNode(true);
-          // Copy attributes from original SVG to maintain styling
           Array.from(svg.attributes).forEach((attr) => {
             if (attr.name !== "class") {
               // Preserve original classes
               clonedContent.setAttribute(attr.name, attr.value);
             }
           });
-          // Copy classes
-          clonedContent.classList.add(...svg.classList);
-          // Replace the original SVG with the inlined version
-          svg.parentNode.replaceChild(clonedContent, svg);
+          newSVG.classList.add(...svg.classList);
+          Array.from(referenceElement.children).forEach((child) => {
+            newSVG.appendChild(child.cloneNode(true));
+          });
+          svg.parentNode.replaceChild(newSVG, svg);
         }
       }
     }
@@ -65,7 +65,6 @@ const clickifyPrint = (dom) => {
       .then(function (dataUrl) {
         const element = document.getElementById("preview");
         element.src = dataUrl;
-
         const link = document.createElement("a");
         link.download = "vote.png";
         link.href = dataUrl;
@@ -1196,7 +1195,7 @@ function urlParam(name, value) {
 
 function init(id) {
   setTimeout(() => {
-    console.log("vote id", id, window.voteid);
+    console.log("vot id", id, window.voteid);
     download(id || window.voteid, draw);
     clickifyPrint(document.getElementById("print"));
   }, 0);
