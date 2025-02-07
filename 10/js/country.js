@@ -29,12 +29,15 @@ const inlineSVGRefs = (element) => {
 const clickifyPrint = (dom) => {
   dom.addEventListener("click", async (e) => {
     e.preventDefault();
+    try {
     const element = document.getElementById("gridmeps");
     //      const originalTransform = element.style.transform;
     //      element.style.transform = 'none';
     inlineSVGRefs(element);
-    htmlToImage
-      .toPng(element, {
+    const link = document.createElement('a')
+    modernScreenshot.domToPng(element,{
+//    htmlToImage
+//      .toPng(element, {
         width: 1600,
         height: 900,
         pixelRatio: 1, // Force 1:1 pixel ratio
@@ -47,6 +50,7 @@ const clickifyPrint = (dom) => {
           position: "fixed", // Prevents layout shifts
         },
         filter: (node) => {
+console.log("filter",node);
           if (
             node.style?.display === "none" ||
             node.style?.visibility === "hidden" ||
@@ -63,6 +67,7 @@ const clickifyPrint = (dom) => {
         },
       })
       .then(function (dataUrl) {
+console.log("generated");
         const element = document.getElementById("preview");
         element.src = dataUrl;
         const link = document.createElement("a");
@@ -70,7 +75,14 @@ const clickifyPrint = (dom) => {
         link.href = dataUrl;
         link.click();
         //        element.style.transform = originalTransform;
+      })
+      .catch (e => {
+console.log("catch error",e);
       });
+
+      } catch (e) {
+console.log("error",e);
+};
   });
 };
 
@@ -1084,7 +1096,7 @@ function drawGrid(dom) {
         return (
           "<div class='party'>" +
           (full.picture &&
-            "<img src='https://pics.mepwatch.eu/parties/" +
+            "<img crossorigin='anonymous' src='https://pics.mepwatch.eu/parties/" +
               full.twitter?.toLowerCase() +
               ".jpg' title='" +
               full.party +

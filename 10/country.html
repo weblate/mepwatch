@@ -19,7 +19,8 @@
 
     <link rel="prefetch" href="./data/meps.csv" as="fetch" />
     <link href="./country.css" rel="stylesheet" />
-    <script src="../node_modules/html-to-image/dist/html-to-image.js"></script>
+    <!-- script src="../node_modules/html-to-image/dist/html-to-image.js"></script-->
+<script src="../node_modules/modern-screenshot/dist/index.js"></script>
     <script src="../dist/js/dcbundle.js"></script>
     <script src="js/vote.js"></script>
     <script src="js/country.js"></script>
@@ -249,7 +250,7 @@
       <table>
         <tr>
           <td class="column-item" id="face">
-            <img src="./img/mep/{epid}.webp" />
+            <img crossorigin="anonymous" src="./img/mep/{epid}.webp" />
           </td>
           <td class="column-item truncate" id="name">{lastname} {firstname}</td>
           <td class="column-item" id="position">
